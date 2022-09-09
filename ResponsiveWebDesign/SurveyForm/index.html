@@ -6,13 +6,25 @@
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <h1 id="title">Survey Form</h1>
-        <p id="description">This survey is meant for... bla bla bla...</p>
+        <header>
+            <h1 id="title">Survey Form</h1>
+            <p id="description">This survey is meant for... bla bla bla...</p>    
+        </header>
         <form id="survey-form">
-            <fieldset>
+            <fieldset id="personal-info">
+                <!-- text input -->
                 <label id="name-label" for="name">Please enter your name: <input id="name" name="name" type="text" placeholder="name" required /></label>
+                <!-- email input -->
                 <label id="email-label" for="email">Please enter your e-mail address: <input id="email" name="email" type="email" placeholder="email@blabla.com" required /></label>
+            </fieldset>
+
+            <hr>
+
+            <fieldset id="survey-info">
+                <!-- numeric input -->
                 <label id="number-label" for="number">How much do you like animals on a scale from 1 to 10: <input id="number" name="number" type="number" min="1" max="10" placeholder="Enter a number..." required /></label>
+
+                <!-- combobox -->
                 <label for="dropdown">Please select one of the following options: 
                     <select id="dropdown" name="dropdown">
                         <option value="">(select one)</option>
@@ -20,27 +32,29 @@
                         <option value="2">Second option</option>
                         <option value="3">Third option</option>
                     </select>
+
+                <!-- radiobuttons -->
+                    <p>How would you define yourself in terms of animal preference?</p>
+                    <label for="dog-person"><input id="dog-person" type="radio" name="pet-person" value="dog-person"> Dog person</label>
+                    <label for="cat-person"><input id="cat-person" type="radio" name="pet-person" value="cat-person"> Cat person</label>
+                    <label for="goldfish-person"><input id="goldfish-person" type="radio" name="pet-person" value="goldfish-person"> Goldfish person</label>
                 </label>
-            </fieldset>
-            <fieldset>
-                <p>How would you define yourself in terms of animal preference?</p>
-                <label for="dog-person"><input id="dog-person" type="radio" name="pet-person" value="dog-person"> Dog person</label>
-                <label for="cat-person"><input id="cat-person" type="radio" name="pet-person" value="cat-person"> Cat person</label>
-                <label for="goldfish-person"><input id="goldfish-person" type="radio" name="pet-person" value="goldfish-person"> Goldfish person</label>
-            </fieldset>
-            <fieldset>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione fuga doloribus est corrupti? Velit consequuntur, corporis voluptas voluptatibus natus excepturi cumque, optio, magni in consequatur rem possimus ratione dolorum iusto.</p>
-            </fieldset>
-            <fieldset>
+
+                <!-- checkbox -->
                 <p>Select one or more reasons for having an animal at home.</p>
                 <label for="fun"><input type="checkbox" name="reasons" id="fun" value="fun"> They are really fun and entertaining.</label>
                 <label for="love"><input type="checkbox" name="reasons" id="love" value="love"> They make you feel loved.</label>
                 <label for="growth"><input type="checkbox" name="reasons" id="growth" value="growth"> They help you grow as a human being.</label>
+
+                <!-- textarea -->
+                <label for="bio">Please use the following space to tell us more about you and your pets! 
+                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="My story..."></textarea>
+                </label>
             </fieldset>
-            <label for="bio">Please use the following space to tell us more about you and your pets! 
-                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="My story..."></textarea>
-            </label>
-            <input id="submit" type="submit" value="Submit">
+            <fieldset id="submit-section"> 
+                <!-- submit button -->
+                <input id="submit" type="submit" value="Submit">
+            </fieldset>   
         </form>
     </body>
 </html>

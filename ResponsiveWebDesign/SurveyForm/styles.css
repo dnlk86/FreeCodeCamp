@@ -1,0 +1,67 @@
+body {
+    background-image: url(https://jooinn.com/images/pets-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+}
+
+header {
+    margin: 25px auto;
+    text-align: center;
+}
+
+form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 128, 0, 0.75);
+    border: none;
+    border-radius: 15px;
+}
+
+fieldset {
+    border: none;
+    text-align: left;
+    margin: 0;
+    padding: 25px;
+}
+
+hr {
+    width: 80%;
+    height: 1px;
+    background-color: white;
+    border-color: white;
+    border-radius: 100%;
+}
+
+label #name, label #email, label #number, label #dropdown {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+
+label input[type="checkbox"] {
+    display: block;
+}
+
+#bio {
+    margin: 15px 0 0;
+    padding: 0;
+    width: 100%;
+    border: none;
+}
+
+#submit {
+    height: 35px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 15px;
+}
+
+#submit-section {
+    padding-top : 0;
+}
+
