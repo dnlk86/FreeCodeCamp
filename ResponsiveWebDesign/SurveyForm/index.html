@@ -4,55 +4,72 @@
         <meta charset="UTF-8"/>
         <title>Survey Form</title>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <h1 id="title">Survey Form</h1>
-            <p id="description">This survey is meant for... bla bla bla...</p>    
-        </header>
         <form id="survey-form">
-            <fieldset id="personal-info">
-                <!-- text input -->
-                <label id="name-label" for="name">Please enter your name: <input id="name" name="name" type="text" placeholder="name" required /></label>
-                <!-- email input -->
+            <header>
+                <h1 id="title">Pet Survey Form</h1>
+                <p id="description">Let us know more about you and your animals!</p>    
+            </header>
+
+            <!-- text input -->
+            <fieldset>
+                <label id="name-label" for="name">Please enter your name: <input id="name" name="name" type="text" placeholder="Name..." required /></label>
+            </fieldset>
+
+            <!-- email input -->
+            <fieldset>
                 <label id="email-label" for="email">Please enter your e-mail address: <input id="email" name="email" type="email" placeholder="email@blabla.com" required /></label>
             </fieldset>
 
             <hr>
 
-            <fieldset id="survey-info">
-                <!-- numeric input -->
-                <label id="number-label" for="number">How much do you like animals on a scale from 1 to 10: <input id="number" name="number" type="number" min="1" max="10" placeholder="Enter a number..." required /></label>
+            <!-- numeric input -->
+            <fieldset>
+                <label id="number-label" for="number">How much do you like animals on a scale from 1 to 10? <input id="number" name="number" type="number" min="1" max="10" placeholder="Enter a number..." required /></label>
+            </fieldset>
 
-                <!-- combobox -->
-                <label for="dropdown">Please select one of the following options: 
-                    <select id="dropdown" name="dropdown">
-                        <option value="">(select one)</option>
-                        <option value="1">First option</option>
-                        <option value="2">Second option</option>
-                        <option value="3">Third option</option>
+            <!-- combobox -->
+            <fieldset>
+                <label for="dropdown">In what group of animal owners do you belong? 
+                    <select id="dropdown" name="dropdown" required>
+                        <option disabled="" selected="" value="">(select one)</option>
+                        <option value="1">I have 1-2 animals</option>
+                        <option value="2">I have 3-5 animals</option>
+                        <option value="3">I have more than 6 animals</option>
                     </select>
-
-                <!-- radiobuttons -->
-                    <p>How would you define yourself in terms of animal preference?</p>
-                    <label for="dog-person"><input id="dog-person" type="radio" name="pet-person" value="dog-person"> Dog person</label>
-                    <label for="cat-person"><input id="cat-person" type="radio" name="pet-person" value="cat-person"> Cat person</label>
-                    <label for="goldfish-person"><input id="goldfish-person" type="radio" name="pet-person" value="goldfish-person"> Goldfish person</label>
-                </label>
-
-                <!-- checkbox -->
-                <p>Select one or more reasons for having an animal at home.</p>
-                <label for="fun"><input type="checkbox" name="reasons" id="fun" value="fun"> They are really fun and entertaining.</label>
-                <label for="love"><input type="checkbox" name="reasons" id="love" value="love"> They make you feel loved.</label>
-                <label for="growth"><input type="checkbox" name="reasons" id="growth" value="growth"> They help you grow as a human being.</label>
-
-                <!-- textarea -->
-                <label for="bio">Please use the following space to tell us more about you and your pets! 
-                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="My story..."></textarea>
                 </label>
             </fieldset>
-            <fieldset id="submit-section"> 
-                <!-- submit button -->
+
+            <!-- radiobuttons -->
+            <fieldset >
+                <p>How would you define yourself in terms of animal preference?</p>
+                <label for="dog-person"><input id="dog-person" type="radio" name="pet-person" value="dog-person"> Dog person</label>
+                <label for="cat-person"><input id="cat-person" type="radio" name="pet-person" value="cat-person"> Cat person</label>
+                <label for="goldfish-person"><input id="goldfish-person" type="radio" name="pet-person" value="goldfish-person"> Goldfish person</label>
+            </fieldset>
+            
+            <!-- checkbox -->
+            <fieldset>
+                <p>Select one or more reasons for having animals in your life.</p>
+                <label class="chk" for="fun"><input  type="checkbox" name="reasons" id="fun" value="fun"> They are really fun and entertaining.</label>
+                <label class="chk" for="love"><input type="checkbox" name="reasons" id="love" value="love"> They make you feel loved.</label>
+                <label class="chk" for="growth"><input type="checkbox" name="reasons" id="growth" value="growth"> They help you grow as a human being.</label>
+                <label class="chk" for="loneliness"><input type="checkbox" name="reasons" id="loneliness" value="loneliness"> You are never alone.</label>
+            </fieldset>
+
+            <!-- textarea -->
+            <fieldset>
+                <label for="bio">Please use the following space to tell us more about you and your pets! 
+                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Your story..."></textarea>
+                </label>
+            </fieldset>
+            
+            <!-- submit button -->
+            <fieldset> 
                 <input id="submit" type="submit" value="Submit">
             </fieldset>   
         </form>

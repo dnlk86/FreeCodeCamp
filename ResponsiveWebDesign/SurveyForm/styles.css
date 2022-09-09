@@ -3,12 +3,28 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin: 0;
+    margin: 25px 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
-    margin: 25px auto;
+    margin: 0;
     text-align: center;
+    font-size: 1.5em;
+    color: black;
+    padding: 25px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+fieldset {
+    border: none;
+    text-align: left;
+    margin: 0;
+    padding: 25px;
+    padding-top: 0;
 }
 
 form {
@@ -20,13 +36,6 @@ form {
     border-radius: 15px;
 }
 
-fieldset {
-    border: none;
-    text-align: left;
-    margin: 0;
-    padding: 25px;
-}
-
 hr {
     width: 80%;
     height: 1px;
@@ -35,33 +44,60 @@ hr {
     border-radius: 100%;
 }
 
-label #name, label #email, label #number, label #dropdown {
-    display: block;
-    margin-top: 10px;
-    width: 100%;
+label {
+    vertical-align: middle;
 }
 
-label input[type="checkbox"] {
+#name, #email, #number, #dropdown, #bio {
     display: block;
-}
-
-#bio {
-    margin: 15px 0 0;
-    padding: 0;
+    margin-top: 15px;
     width: 100%;
-    border: none;
 }
 
 #submit {
+    font-family: 'Poppins', sans-serif;
     height: 35px;
     width: 100%;
     padding: 0;
     margin: 0;
-    border: none;
+    border: 3px solid grey;
     border-radius: 15px;
+    background-color: darkorange;
+    color: white;
+    font-size: 1.0em;
 }
 
-#submit-section {
-    padding-top : 0;
+#submit:hover {
+    font-size: 1.0em;
+    background-color: grey;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
 }
 
+.chk {
+    display: flex;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    height: 20px;
+    width: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="number"], select {
+    height: 30px;
+    width: 100%;
+}
+
+input, textarea {
+    box-sizing: border-box;
+}
+
+::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+select {
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+}
