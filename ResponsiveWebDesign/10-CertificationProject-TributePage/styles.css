@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+#title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#image {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#title h1, #title p {
+    text-align: center;
+    width: 100%;
+}
