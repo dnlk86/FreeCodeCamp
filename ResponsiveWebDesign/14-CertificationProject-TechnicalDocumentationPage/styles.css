@@ -35,5 +35,12 @@ body {
     flex-wrap: nowrap;
     gap: 20px;
     padding: 15px;
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 769px) {
+  #navbar {
+    border-right: none;
   }
 }
