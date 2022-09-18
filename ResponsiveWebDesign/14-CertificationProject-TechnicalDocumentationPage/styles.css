@@ -16,12 +16,42 @@ body {
   align-items: left;
   padding: 15px;
   gap: 10px;
+  background-color: #fca311;
+}
+
+#navbar header {
+  font-size: 1.5em;
+  color: #e5e5e5;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.nav-link:hover {
+  color: #457b9d;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #fca311;
+}
+
+.main-section header {
+  font-size: 1.2em;
+  color: #457b9d;
 }
 
 #main-doc {
   border: 3px solid black;
   width: 100%;
   padding: 15px;
+  background-color: #e5e5e5;
 }
 
 @media (max-width: 768px) {
