@@ -1,9 +1,27 @@
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   display: flex;
+  font-family: 'Poppins', sans-serif;
+}
+
+#top {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.to-top-btn {
+  text-decoration:  none;
+  color: #ef233c;
+  margin-left: 90%;
+}
+
+.to-top-btn:hover {
+  color: #d90429;
 }
 
 #navbar {
