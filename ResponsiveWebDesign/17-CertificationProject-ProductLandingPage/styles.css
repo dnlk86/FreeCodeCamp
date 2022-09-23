@@ -25,7 +25,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 0 10%;
     background: linear-gradient(90deg, #fff, #fff 10%, var(--color5));
     border-bottom:  2.5px var(--color4) solid;
@@ -36,10 +36,12 @@ body {
 }
   
 #nav-bar {
-    
+    display: flex;
+    flex-direction: row;
 }
 
 #nav-bar a {
+    white-space: nowrap;
     margin: 50px;
     font-family: 'Montserrat-Light', sans-serif;
     text-decoration: none;
@@ -58,4 +60,21 @@ body {
 /* SECTION 3 - LEARN MORE */
 input, input::-webkit-input-placeholder {
     font-size: 0.8rem;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav-bar {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #nav-bar a {
+        margin: 10px 0;
+    }
 }
