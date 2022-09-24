@@ -73,10 +73,17 @@ section {
 
 .features-img {
     color: var(--color5);
-    margin-bottom: 1rem;
 }
 .features-img:hover {
     color: var(--color2);
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 25px;
 }
 
 /* SECTION 2 - VIDEO */
