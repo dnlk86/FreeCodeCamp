@@ -55,6 +55,12 @@ body {
 }
 
 /* ALL SECTIONS */
+h2 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: var(--color3);
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -67,10 +73,6 @@ section {
 }
 
 /* SECTION 1 - FEATURES */
-#section-1 {
-
-}
-
 .features-img {
     color: var(--color5);
 }
@@ -87,10 +89,6 @@ section {
 }
 
 /* SECTION 2 - VIDEO */
-#section-2 {
-
-}
-
 #video {
     width: 500px;
     max-width: 90vw;
@@ -101,10 +99,6 @@ section {
 }
 
 /* SECTION 3 - LEARN MORE */
-#section-3 {
-
-}
-
 input, input::-webkit-input-placeholder {
     font-size: 0.8rem;
 }
