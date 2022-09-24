@@ -71,6 +71,14 @@ section {
 
 }
 
+.features-img {
+    color: var(--color5);
+    margin-bottom: 1rem;
+}
+.features-img:hover {
+    color: var(--color2);
+}
+
 /* SECTION 2 - VIDEO */
 #section-2 {
 
