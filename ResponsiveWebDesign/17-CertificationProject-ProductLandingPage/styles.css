@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding: 0 10%;
+    padding: 15px 10%;
     background: linear-gradient(90deg, #fff, #fff 10%, var(--color5));
     border-bottom:  2.5px var(--color4) solid;
 }
@@ -42,7 +42,7 @@ body {
 
 #nav-bar a {
     white-space: nowrap;
-    margin: 50px;
+    margin: 0 25px;
     font-family: 'Montserrat-Light', sans-serif;
     text-decoration: none;
     font-size: 1.2rem;
@@ -65,11 +65,14 @@ input, input::-webkit-input-placeholder {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     #header {
+        height: 250px;
         flex-direction: column;
         align-items: flex-start;
     }
 
     #nav-bar {
+        position: fixed;
+        padding-top: 100px;
         flex-direction: column;
         justify-content: flex-start;
     }
