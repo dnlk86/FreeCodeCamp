@@ -4,7 +4,8 @@
     --color3: #FF6D37;
     --color4: #FF7D4B;
     --color5: #72A544;
-    --color6: #D9D9D9;
+    --color6: #E5E5E5;
+    --color7: #FFFFFF;
 }
 
 *, *::before, *::after {
@@ -53,11 +54,42 @@ body {
     color: var(--color1);
 }
 
+/* ALL SECTIONS */
+section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
 /* SECTION 1 - FEATURES */
+#section-1 {
+
+}
 
 /* SECTION 2 - VIDEO */
+#section-2 {
+
+}
+
+#video {
+    width: 500px;
+    max-width: 90vw;
+    height: 350px;
+    max-height: 90vh;
+    border: 2.5px solid var(--color5);
+    
+}
 
 /* SECTION 3 - LEARN MORE */
+#section-3 {
+
+}
+
 input, input::-webkit-input-placeholder {
     font-size: 0.8rem;
 }
@@ -65,19 +97,24 @@ input, input::-webkit-input-placeholder {
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
     #header {
+        position: fixed;
         height: 250px;
         flex-direction: column;
         align-items: flex-start;
     }
 
     #nav-bar {
-        position: fixed;
-        padding-top: 100px;
+        /* position: fixed; */
+        /* padding-top: 100px; */
         flex-direction: column;
         justify-content: flex-start;
     }
 
     #nav-bar a {
         margin: 10px 0;
+    }
+
+    #section-1 {
+        padding-top: 250px;
     }
 }
