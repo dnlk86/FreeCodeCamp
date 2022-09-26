@@ -53,11 +53,39 @@ h2 {
 }
 
 #navbar a {
+    position: relative;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     letter-spacing: 0.4rem;
     color: var(--neon-text);
     text-decoration: none;
+    padding: 0 10px;
+}
+
+#navbar a::after {
+    position: absolute;
+    content: "";
+    background-color: #fff;
+    height: 0.1rem;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+    box-shadow:
+        /* white glow */
+        0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text),
+        0 0 19px var(--neon-text),
+        /* colored glow */
+        0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow),
+        0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow),
+        0 0 150px var(--neon-shadow);
+}
+
+#navbar a:hover::after {
+    width: 100%;
 }
 
 #navbar a:hover {
