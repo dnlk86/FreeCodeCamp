@@ -1,14 +1,84 @@
 :root {
-    --portfolio-background: black;
-    --text-neon: green;
+    --navbar-background: #003459;
+    --portfolio-background: #00171f;
+    --neon-text:  #ffffff;
+    --neon-shadow: #4895ef;
+    --color1: #ffffff;
+    --color2: #00171f;
+    --color3: #003459;
+    --color4: #007ea7;
+    --color5: #00a8e8;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--portfolio-background);
+}
+
+h1, h2 {
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 300;
+    letter-spacing: 0.25rem;
+    color: var(--neon-text);
+    text-shadow:
+        /* white glow */
+        0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text),
+        0 0 19px var(--neon-text),
+        /* colored glow */
+        0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow),
+        0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow),
+        0 0 150px var(--neon-shadow);
+    animation: pulsate 2.5s infinite alternate;
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+@keyframes pulsate {
+    0% {
+        text-shadow: 
+            0 0 4px var(--neon-text),
+            0 0 11px var(--neon-text),
+            0 0 19px var(--neon-text),
+            0 0 40px var(--neon-shadow),
+            0 0 80px var(--neon-shadow),
+            0 0 90px var(--neon-shadow),
+            0 0 100px var(--neon-shadow),
+            0 0 150px var(--neon-shadow);
+    }
+    100% {       
+        text-shadow:
+            0 0 2px var(--neon-text),
+            0 0 4px var(--neon-text),
+            0 0 6px var(--neon-text),
+            0 0 10px var(--neon-shadow),
+            0 0 45px var(--neon-shadow),
+            0 0 55px var(--neon-shadow),
+            0 0 70px var(--neon-shadow),
+            0 0 80px var(--neon-shadow);
+      }  
+}
+
+/* NAVBAR */
+#navbar {
+    position: sticky;
+    width: 100%;
+    height: 100px;
+    background-color: var(--navbar-background);
 }
