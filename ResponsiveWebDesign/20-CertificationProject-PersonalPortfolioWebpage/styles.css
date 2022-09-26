@@ -23,10 +23,82 @@ body {
     background-color: var(--portfolio-background);
 }
 
-h1, h2 {
-    font-family: 'Noto Sans Mono', monospace;
-    font-weight: 300;
-    letter-spacing: 0.25rem;
+h1 {
+    font-size: 4.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+/* NAVBAR */
+#navbar {
+    position: fixed;
+    width: 100%;
+    height: 75px;
+    background-color: var(--navbar-background);
+}
+
+#navbar ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0 5vw 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 7%;
+    list-style-type: none;
+}
+
+#navbar a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.4rem;
+    color: var(--neon-text);
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    text-shadow:
+        /* white glow */
+        0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text),
+        0 0 19px var(--neon-text),
+        /* colored glow */
+        0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow),
+        0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow),
+        0 0 150px var(--neon-shadow);
+}
+
+/* WELCOME SECTION */
+#neon-border {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    border: 0.1rem solid var(--neon-text);
+    border-radius: 2rem;
+    padding: 0.5em 3em;
+    box-shadow:
+        /* white glow */
+        0 0 0.2rem #fff,
+        0 0 0.2rem #fff,
+        /* colored glow */
+        0 0 2rem var(--neon-shadow),
+        0 0 0.8rem var(--neon-shadow),
+        0 0 2.8rem var(--neon-shadow),
+        inset 0 0 1.3rem var(--neon-shadow);
+    animation: border-pulsate 2.5s infinite alternate;
+    z-index: 999;
+}
+
+.neon-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.3rem;
     color: var(--neon-text);
     text-shadow:
         /* white glow */
@@ -39,18 +111,21 @@ h1, h2 {
         0 0 90px var(--neon-shadow),
         0 0 100px var(--neon-shadow),
         0 0 150px var(--neon-shadow);
-    animation: pulsate 2.5s infinite alternate;
+    animation: text-pulsate 2.5s infinite alternate;
+    user-select: none;
 }
 
-h1 {
-    font-size: 4.5rem;
+#neon-border:hover {
+    animation: border-flicker 1.5s infinite alternate;
+    cursor: pointer;
 }
 
-h2 {
-    font-size: 2.5rem;
+#neon-border:hover .neon-text {
+    animation: text-flicker 1.5s infinite alternate;
 }
 
-@keyframes pulsate {
+/* ANIMATION */
+@keyframes text-pulsate {
     0% {
         text-shadow: 
             0 0 4px var(--neon-text),
@@ -72,13 +147,67 @@ h2 {
             0 0 55px var(--neon-shadow),
             0 0 70px var(--neon-shadow),
             0 0 80px var(--neon-shadow);
-      }  
+        }  
 }
 
-/* NAVBAR */
-#navbar {
-    position: sticky;
-    width: 100%;
-    height: 100px;
-    background-color: var(--navbar-background);
+@keyframes text-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 4px var(--neon-text),
+            0 0 11px var(--neon-text),
+            0 0 19px var(--neon-text),
+            0 0 40px var(--neon-shadow),
+            0 0 80px var(--neon-shadow),
+            0 0 90px var(--neon-shadow),
+            0 0 100px var(--neon-shadow),
+            0 0 150px var(--neon-shadow);
+    }
+    20%, 24%, 55% {       
+        text-shadow: none;
+    }  
 }
+
+@keyframes border-pulsate {
+    0% {
+        box-shadow:
+        /* white glow */
+        0 0 0.2rem #fff,
+        0 0 0.2rem #fff,
+        /* colored glow */
+        0 0 2rem var(--neon-shadow),
+        0 0 0.8rem var(--neon-shadow),
+        0 0 2.8rem var(--neon-shadow),
+        inset 0 0 1.3rem var(--neon-shadow);
+    }
+    100% {
+        box-shadow:
+        /* white glow */
+        0 0 0.1rem #fff,
+        0 0 0.1rem #fff,
+        /* colored glow */
+        0 0 1rem var(--neon-shadow),
+        0 0 0.5rem var(--neon-shadow),
+        0 0 1rem var(--neon-shadow),
+        inset 0 0 0.5rem var(--neon-shadow);
+    }
+
+}
+
+@keyframes border-flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        box-shadow:
+        /* white glow */
+        0 0 0.2rem #fff,
+        0 0 0.2rem #fff,
+        /* colored glow */
+        0 0 2rem var(--neon-shadow),
+        0 0 0.8rem var(--neon-shadow),
+        0 0 2.8rem var(--neon-shadow),
+        inset 0 0 1.3rem var(--neon-shadow);
+    }
+    20%, 24%, 55% {       
+        box-shadow: none;
+    }  
+}
+
+/* MEDIA QUERIES */
