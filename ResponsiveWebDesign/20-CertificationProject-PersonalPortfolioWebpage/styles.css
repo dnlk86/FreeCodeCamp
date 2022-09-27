@@ -214,8 +214,30 @@ h2 {
 
 /* PROFILE LINK */
 #profile-link {
+    position: relative;
     width: 100%;
     height: 100vh;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    background-color: var(--navbar-background);
+}
+
+footer p {
+    margin: 0;
+    padding-top: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.4rem;
+    color: var(--neon-text);
+    text-align: center;
 }
 
 /* ANIMATION */
