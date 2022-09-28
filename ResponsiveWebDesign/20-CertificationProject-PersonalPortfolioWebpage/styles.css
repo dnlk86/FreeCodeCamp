@@ -237,7 +237,7 @@ h3 {
 }
 
 /* PROFILE LINK */
-#profile-link {
+#contact-section {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -274,7 +274,8 @@ footer p {
     padding-top: 25px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    letter-spacing: 0.4rem;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
     color: var(--neon-text);
     text-align: center;
 }
@@ -367,6 +368,11 @@ footer p {
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
+    #navbar ul {
+        padding: 0 2vw 0 2vw;
+        gap: 2%;
+    }
+
     #welcome-section {
         padding-top: 100px;
     }
