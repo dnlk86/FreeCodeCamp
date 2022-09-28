@@ -107,12 +107,17 @@ h2 {
 #welcome-section {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-#neon-border {
-    position: absolute;
-    top: 25%;
-    left: 5%;
+#neon-container {
+    width: 50%;
+    min-width: 400px;
+    height: fit-content;
     border: 0.1rem solid var(--neon-text);
     border-radius: 2rem;
     padding: 0.5em 3em;
@@ -148,13 +153,24 @@ h2 {
     user-select: none;
 }
 
-#neon-border:hover {
+#neon-container:hover {
     animation: border-flicker 1.5s infinite alternate;
     cursor: pointer;
 }
 
-#neon-border:hover .neon-text {
+#neon-container:hover .neon-text {
     animation: text-flicker 1.5s infinite alternate;
+}
+
+#about-container {
+    width: 25%;
+    min-width: 400px;
+    height: fit-content;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+    color: var(--neon-text);
+    border: 0.1rem solid var(--neon-text);
 }
 
 /* PROJECTS */
