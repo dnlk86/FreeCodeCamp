@@ -5,17 +5,18 @@
 - Variables are declared with the keyword "var" and assigned with the "=" operator. Declaration and assignment can
     occur on the same line of code followed by a ";".
 - It's common practice to initialize a variable on the same line it is declared.
-- String or string literal is a series of zero or more characters enclosed in single or double quotes.
-- When variables are first declared they have the initial value of undefined.
+- String or string literal is a series of zero or more characters enclosed in single or double quotes. It is  however important
+    to be consistent, once a string starts in a certain manner it has to end the same way.
+- When variables are first declared (and not assigned yet) they have the initial value of undefined.
 - NaN stands for not a number and it is for example obtained by performing operations on undefined variables.
-- In JS variables and function names are case sensitive. Best practice for variable names is to use camelCase.
+- In JS variables and function names are case sensitive. Best practice for variable names is to use lower camelCase.
 - Declaring variables with the var keyword doesn't alert you in case of variable overwriting. Better use the let keyword 
     (introduced in ES6) in declarations, since it throws an error in the console if a variable is declared more than once.
 - Variables can also be assigned with the const keyword. It has all the features that let has plus it is read only, it means
     that it cannot be modified and variables declared with const cannot be reassigned.
 - It is common to name with uppercase variables declared with const.
 - Number is the datatype used to represent numeric data.
-- All the numeric operator can be applied to numbers.
+- All the numeric operators can be applied to numbers.
 - varName++ is used to increment a number by 1, it is the equivalent of writing varName = varName + 1.
 - The same can be done with subtraction, varName-- .
 - Floats or floating point numbers are decimal numbers. Integer and decimal part of the number are separated by a dot.
@@ -24,7 +25,18 @@
 - The same calculations performed with integer numbers can also be performed with decimal numbers, the outcome of the calculation
     will be a float.
 - The remainder operator % gives the remainder of the division of two numbers.
-- In programming is common to use assignments to modify the content of a variable. Everything to the right of the equal sign is
+- In programming it is common to use assignments to modify the content of a variable. Everything to the right of the equal sign is
     evaluated first. Example: myVar = myVar + 5
 - Certain operators do assignment and mathematical operation at the same time: myVar += 1 . Other operators are -=, *=, /= .
+- In JS the backslash (\) used before a single or double quote indicates that the quote symbol (the quote is escaped) is char rather 
+    than the start or the end of a string. Another way to achieve the same goal is to use one kind of quotes for the string start/end 
+    and the other type as character.
+- Other characters can be escaped inside strings: \' single quote, \" double quote, \\ backslash, \n newline, \r carriage return,
+    \t tab, \b word boudary, \f form feed.
+- In JS strings the + operator is called the concatenation opeartor and it is used to concatenate strings. The + operator does not
+    add space between string, it has to be taken into account.
+- Cancatenation can be also done with the += operator. This is really useful to break long strings into several lines.
+- By using the + operator is possible also to include variables inside a concatenation statement.
+- It is also possible to append variables to a string with the += operator.
+- The length of a string can be found by using the .length method on the string itself. Note that also whitespace is counted.
 - 
