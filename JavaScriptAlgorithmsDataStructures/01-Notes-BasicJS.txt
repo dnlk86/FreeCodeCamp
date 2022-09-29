@@ -39,4 +39,20 @@
 - By using the + operator is possible also to include variables inside a concatenation statement.
 - It is also possible to append variables to a string with the += operator.
 - The length of a string can be found by using the .length method on the string itself. Note that also whitespace is counted.
-- 
+- Bracket notation is a way to get access to a character at a specific index. JS like other modern programming languages uses
+    zero-based indexing (indexes start at 0).
+- In JS strings are immutable, this means we cannot re-assign a character at a certain index.
+- In order to get the last char of a string: lastChar = myStr[myStr.length - 1] . The same principle can be applied also to nth-to-last.
+- Arrays allow to store several pieces of data in one place. The array is declared with square brackets. The actual data goes inside
+    and is comma separated. Arrays are zero-based indexed data structures. Arrays can contain different datatypes all at once. It is
+    also possible to nest arrays within other arrays (that's called nesting and the array is called multi-dimensional).
+- Unlike strings arrays are mutable (even if declared with const), it means that we can change the content at a certain index with 
+    a left assigment operation: myArr[3] = "somethinNew"; .
+- Accessing the data inside a multi-dimensional array (or array of arrays) is done by using the usual brackets notation with the 
+    left-most set of brackets indicating the outer-most array and no space between one sets of brackets and the next.
+- A way to append new data to an array is to use of the .push() method. As the name suggests the new element is passed as a parameter
+    and pushed at the end of the array, becoming its new last element.
+- The method pop() does the opposite of push(). As the name suggests it will remove the last element of an array and returns that element.
+    The element can be stored in a new variable.
+- The shift() method removes the first element of an array and returns it.
+- Just like pop and push also the shift() method has an opposite called unshift(), which adds an element at the beginning of an array.
