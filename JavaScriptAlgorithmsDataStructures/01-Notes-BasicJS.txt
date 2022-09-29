@@ -56,3 +56,20 @@
     The element can be stored in a new variable.
 - The shift() method removes the first element of an array and returns it.
 - Just like pop and push also the shift() method has an opposite called unshift(), which adds an element at the beginning of an array.
+- Functions are reusable blocks of code. Functions can be called or invoked in JS by using their name follower by parentheses functionName(); .
+- Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. The actual values 
+    that are input (or "passed") into a function when it is called are known as arguments.
+- The return keyword is used to pass the outcome of a function outside of the function body itself. This outcome can be stored in a variable
+    or passed as an argument to another function.
+- In Js scope refers to the visibility of a variable. Variables defined outside a function block have global scope, it means they can 
+    be seen everywhere in your code.
+- Variables declared without var, let or const are automatically created in the global scope. It's good practice not to do it.
+- Variables declared inside a function and parameters as well have local scope, it means they are only visible inside the function body.
+- Trying to access a variable from outside its scope will throw a ReferenceError: myVar is not defined;
+- It is possible to have global and local variables with the same name. In this case the local one has the precedence.
+- Functions can have a return statement but don't necessarily need to, in such case they will execute the code and return undefined.
+- A queue in computer science is a data structure where items are kept in order. It's possible to add new elements at the end of the 
+    queue or remove old items from the front of it.
+- Boolean is a datatype that allowes only two values/states, which are mutually exlusive, true and false.
+- If statements are used like in every other programming language to make decisions. The code within the curly braces of the if
+    statement is executed only if the boolean condition/s within the paretheses is evaluated to true, otherwise the block is skipped.
