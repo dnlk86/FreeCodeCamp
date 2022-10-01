@@ -90,3 +90,7 @@
 - We access data in objects with properties (keys) rather than with indexes.
 - There are two ways of accessing the properties of an object, dot notation (.) and bracket notation ([]). Dot notation is used when
     the name of the property has no spaces. If the name of the property has a space in it, the bracket notation has to be used.
+- To check if an object has a property: myObj.hasOwnProperty(propName) it returns true/false.
+- Objects are flexible data structure, they can contain different sets of data types or more data structures nested within.
+- The sub-properties of objects can be reached by chaining together the dot or bracket notation.    
+- Similare to objects is possible to access elements in nested arrays by chaining bracket notation.
