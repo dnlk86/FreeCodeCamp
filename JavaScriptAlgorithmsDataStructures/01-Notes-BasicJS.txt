@@ -94,3 +94,13 @@
 - Objects are flexible data structure, they can contain different sets of data types or more data structures nested within.
 - The sub-properties of objects can be reached by chaining together the dot or bracket notation.    
 - Similare to objects is possible to access elements in nested arrays by chaining bracket notation.
+- Two important aspects of logical operators in JavaScript is that they evaluate from left to right, and they short-circuit.
+    What this means is that when JavaScript evaluates an OR expression, if the first operand is true, JavaScript will short-circuit 
+    and not even look at the second operand.
+
+        var person = {
+            name: 'Jack',
+            age: 34
+        }
+        console.log(person.job || 'unemployed');
+        // 'unemployed'
