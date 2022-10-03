@@ -104,3 +104,20 @@
         }
         console.log(person.job || 'unemployed');
         // 'unemployed'
+- The while loop iss called like this because it runs while a specific condition is true and stops when that condition is no longer 
+    true. The while loop is an indefinite loop, since the number of permutation it runs is not known upfront.
+- The for loop is a definite loop, it runs a specific number of times. For loops are declared with three optional expressions 
+    separated by commas: for (a; b; c), where a is the initialization statement (executed only the first time), b is the condition 
+    statement (the condition is checked every time the loop runs), and c is the final expression (it is executed at the end of
+    every execution iteration).
+- For loops don't have to iterate one at a time: for (let i=0; i<10; i+=2) {...}.
+- For loops can also count backwards: for (let i = 10; i > 0; i -= 2) {...}.
+- The do ... while loop does first one initial pass of the code inside the while loop, no matter the condition, and from the second
+    iteration starts to check the condition.
+    do {
+        ...things to do;
+    } while (someCondition);
+- A way to replace the use of loops is recursion. Recursion is the concept that a function can be expressed in terms of itself.
+    A function can call itself.
+- Note, recursive functions must have a base case when they return without calling the function again, otherwise they can never 
+    finish executing.
