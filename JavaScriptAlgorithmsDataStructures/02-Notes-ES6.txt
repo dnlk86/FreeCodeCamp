@@ -1,0 +1,22 @@
+- Variables declared with the let keyword inside a block, statement, or expression, have a scope limited to that block, statement, 
+    or expression:
+        for (let i=0: i < 100; i++) {
+            ... some code;
+        }
+        In this case i leaves only inside the for loop. If var is used instead to declare a variable, that variable is declared globally,
+        or locally if declared inside a function. 
+- Some devs use const to declare all variables and use let just in those cases when they know that they need to reassign a variable.
+    Objects (including arrays and functions) assigned to a variable using const are still mutable, const only prevents reassignment 
+    of the variable identifier.
+- Const doesn't prevent data mutation, to do that there is the Object.freeze(someObj) function that throws an error in such cases.
+- Arrow functions are used to write anonymous functions. When there's no function body and only a return val the syntax is:
+    const myFunc = () => "value";
+- It is also possible to pass parameters to arrow functions, if there's only one param then the parentheses are not needed:
+    const myFunc = myParam => myParam*2;
+    In case of more params parentheses are needed.
+- Default parameters kick in when an argument is not passed to the function when called: 
+    const myFunc = (someParam = "myDefault) => returnSomething;
+- Rest paramenters are used to create functions that take a variable number of arguments. These arguments are stored in an array 
+    that can be accessed later from inside the function: const myFunc = (...args) => returnSomething;
+    The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the 
+    parameters array.
