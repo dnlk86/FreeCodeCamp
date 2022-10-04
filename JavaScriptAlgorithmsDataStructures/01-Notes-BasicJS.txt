@@ -1,23 +1,23 @@
 - Comments in JavaScript: // single line, /* multiline */ .
-- JavaScript has eight different data types: undefined, null, boolean, string, symbol, bigint, number, object.
+- JavaScript has eight data types: undefined, null, boolean, string, symbol, bigint, number, object.
 - Variables allow computer to store data under a "label" and use the reference of that data in future operations
     rather than the data itself.
 - Variables are declared with the keyword "var" and assigned with the "=" operator. Declaration and assignment can
-    occur on the same line of code followed by a ";".
+    occur on the same line of code.
 - It's common practice to initialize a variable on the same line it is declared.
-- String or string literal is a series of zero or more characters enclosed in single or double quotes. It is  however important
-    to be consistent, once a string starts in a certain manner it has to end the same way.
+- String or string literal is a series of zero or more characters enclosed in single or double quotes. 
+    Consistency in using quotes is important.
 - When variables are first declared (and not assigned yet) they have the initial value of undefined.
 - NaN stands for not a number and it is for example obtained by performing operations on undefined variables.
-- In JS variables and function names are case sensitive. Best practice for variable names is to use lower camelCase.
-- Declaring variables with the var keyword doesn't alert you in case of variable overwriting. Better use the let keyword 
-    (introduced in ES6) in declarations, since it throws an error in the console if a variable is declared more than once.
+- JS is case sensitive. Best practice for variable names is lower camelCase.
+- Declaring variables with the var keyword doesn't alert you in case of variable overwriting. Better to use the let keyword 
+    (introduced in ES6) in declarations, it throws an error in the console if a variable is declared more than once.
 - Variables can also be assigned with the const keyword. It has all the features that let has plus it is read only, it means
-    that it cannot be modified and variables declared with const cannot be reassigned.
+    that it cannot be modified and variables declared with const cannot be reassigned (mutable objects can be modified).
 - It is common to name with uppercase variables declared with const.
 - Number is the datatype used to represent numeric data.
 - All the numeric operators can be applied to numbers.
-- varName++ is used to increment a number by 1, it is the equivalent of writing varName = varName + 1.
+- varName++ is used to increment a number by 1, it is the equivalent of: varName = varName + 1.
 - The same can be done with subtraction, varName-- .
 - Floats or floating point numbers are decimal numbers. Integer and decimal part of the number are separated by a dot.
 - Important to remember that decimal numbers are always finite numbers in computers, since computers have finite resources.
@@ -33,9 +33,9 @@
     and the other type as character.
 - Other characters can be escaped inside strings: \' single quote, \" double quote, \\ backslash, \n newline, \r carriage return,
     \t tab, \b word boudary, \f form feed.
-- In JS strings the + operator is called the concatenation opeartor and it is used to concatenate strings. The + operator does not
+- In JS strings the + operator is called the concatenation operator and it is used to concatenate strings. The + operator does not
     add space between string, it has to be taken into account.
-- Cancatenation can be also done with the += operator. This is really useful to break long strings into several lines.
+- Concatenation can be also done with the += operator. This is really useful to break long strings into several lines.
 - By using the + operator is possible also to include variables inside a concatenation statement.
 - It is also possible to append variables to a string with the += operator.
 - The length of a string can be found by using the .length method on the string itself. Note that also whitespace is counted.
@@ -53,7 +53,6 @@
 - A way to append new data to an array is to use of the .push() method. As the name suggests the new element is passed as a parameter
     and pushed at the end of the array, becoming its new last element.
 - The method pop() does the opposite of push(). As the name suggests it will remove the last element of an array and returns that element.
-    The element can be stored in a new variable.
 - The shift() method removes the first element of an array and returns it.
 - Just like pop and push also the shift() method has an opposite called unshift(), which adds an element at the beginning of an array.
 - Functions are reusable blocks of code. Functions can be called or invoked in JS by using their name follower by parentheses functionName(); .
