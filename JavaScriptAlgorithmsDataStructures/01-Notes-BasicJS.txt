@@ -121,3 +121,21 @@
     A function can call itself.
 - Note, recursive functions must have a base case when they return without calling the function again, otherwise they can never 
     finish executing.
+- Js has a Math.random() function that generates a random decimal number from 0 (inclusive) and 1 (exclusive).
+- The function Math.floor() rounds a decimal number down to its nearest whole number.
+- By multiplying a random decimal number (0 to 1(not included)) by a decimal number and then flooring the result it is possible to
+    obtain a random whole number. It is to consider that if we multiply by 10 the obtained interval of whole random numbers will   
+    be from 0 to 9.
+- To generate a random whole number between two intervals, min and max, the following formula is used:
+    Math.floor(Math.random() * (max - min + 1)) + min.
+- The parseInt() function parses a string and returns an integer, if the conversion fails because we pass a string that cannot be
+    converted then it return NaN. The parseInt(string, radix) takes two inputs, the radix specifies the base of the number in the 
+    string and can take an integer value between 2 and 36.
+- The conditional operator, also called ternary operator, can be used as one line if-else statement with the following syntax:
+    a ? b : c, where a is the condition, b is the code to run in case the condition evaluates true, and c is the code that runs
+    if the condition returns false.
+- It is also possible to chain multiple ternary operators just like with if, else if, else statements. It is considered best
+    practice to format multiple conditional operators such that each condition is on a separate line:
+    (condition1) ? action1          // if
+    : (condition2) ? action2        // else if
+    : action3                       // else
