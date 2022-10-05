@@ -20,3 +20,17 @@
     that can be accessed later from inside the function: const myFunc = (...args) => returnSomething;
     The rest parameter eliminates the need to check the args array and allows us to apply map(), filter() and reduce() on the 
     parameters array.
+- The spread operator allows to expand (spread) arrays and other expressions in places where multiple parameteres or elements are
+    expected:
+        const arr = [1,2,3,4];
+        const maximus = Math.max(...arr);
+    ...arr returns an unpacked array, it spreads the array since Math.max() expects comma separated arguments, but not an array.
+    The spread operator only works in place, like in an argument of a function or in a literal array, but doesn't work in variable
+    assignments:
+        const spreaded= ...arr; // does not work
+- Destructuring assigment is used for extracting values from an object:
+    const user = { name: 'John Doe', age: 34 };     // That's the object
+    const {name, age} = user;                       // That's the destructuring syntax
+- Destructuring assigment can also be used to assign new variable names when extracting values:
+    const {name: userName, age: userAge} = user;    // Read as: get the value of user.name and assign it to a new variable named 
+                                                        userName and so on.
