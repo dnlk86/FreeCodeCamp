@@ -68,3 +68,24 @@
             }
         }
         const carrot = new Vegetable("carrot");         \\ new object creation with the invoking of the constructor
+- Private variables in objects are those variables not meant for direct access of the user. Their names are by convention usually 
+    preceded the with an underscore (_).
+- Getters and setters are used to control access to properties within an object hiding internal implementation details. 
+    Getter functions are meant to return (get) the value of an object's private variable without the user directly accessing 
+    the private variable. Setters modify the value of an object's private variable:
+        class Book {
+            constructor(author) {
+                this._author = author;
+            }
+            // getter
+            get writer() {
+                return this._author;
+            }
+            // setter
+            set writer(updatedAuthor) {
+                this._author = updatedAuthor;
+            }
+        }
+- Invoking a getter or a setter differes from calling a function:
+    console.log(novel.writer);      \\ getter
+    novel.writer = 'newAuthor';     \\ setter
