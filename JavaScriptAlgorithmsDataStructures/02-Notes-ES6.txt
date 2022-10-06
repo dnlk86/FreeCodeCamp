@@ -89,3 +89,46 @@
 - Invoking a getter or a setter differes from calling a function:
     console.log(novel.writer);      \\ getter
     novel.writer = 'newAuthor';     \\ setter
+- To export a function in js:
+    export {functionName};
+
+        or
+
+    export const functionName = () {        \\ this is called nad export
+        return something;
+    }
+- To import js code in another file:
+    import {someFunc} from "./someFile.js";     \\ this allows to import only certain functionalities instead of an entire file
+- It is possible to import everything from a file with the following syntax:
+    import * as someModuleAlias from "./someFile.js";       \\ this will create a someModuleAlias module that has the functions declared
+                                                            \\ in someFiles.js
+- Another way to export a function is with the export default syntax. It is used to create a fallback value for a module or file.
+    Only one value can be a default in one module or file. Additionally it not possible to use export default with const, var or let:
+        export default function someFancyFunction() {
+            return fancyThings;
+        }
+- To import a default in another file the syntax is slightly different that usual:
+    import someFancyFunction from "./fancy_module.js";      \\ no curly braces
+- A promise as the name sais is a promise to do something, usually asyncrhronously. When the task completes it is possible to 
+    fullfil the promise or fail to do so. Promise is a constructor function (new keyword needed), it takes a function as its argument 
+    with two parameters, resolve and reject, these are methods to determine the outcome of the promise. Syntax:
+        const myPromise = new Promise((resolve, reject) => {
+
+        });
+- Promises have three states, pendi, resolve, reject:
+    const myPromise = new Promise((resolve, reject) => {
+            if (someCondition) {
+                resolve(...);                \\ promise fullfilled
+            } else {
+                reject(...);                  \\ promise failed
+            }
+        });
+- The .then method executes right after a promise is resolved. It is useful when a process takes an unknown amount of time and the outcome
+    is further needed:
+        myPromise.then(result => {      \\ result comes from the argument given to the resolve method
+
+        });
+- The .catch method is used when a promise is rejected:
+        myPromise.catch(error => {      \\ error comes from the argument passed to the reject method
+
+        });
