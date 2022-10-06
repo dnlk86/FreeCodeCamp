@@ -48,4 +48,23 @@
         const myFunc = function({objProp1, objProp2, ..., objPropN}) {
             something something.
         }
-- Template literal is a special type of string that allows to create complex strings easy.
+- Template literal is a special type of string that allows to create complex strings easy. It uses backticks (`) to wrap the string
+    text and ${} to include variables in the text body. The text can be written on multiple lines (the output will also be on multiple 
+    lines just as it is written) without the use of the \n char.
+- Object literal allow to avoid redundancy while creating objects with functions:
+    const createPerson = (name, age, gender) => ({name, age, gender});      \\ don't have to write name: name and so on
+- When defining functions in objects is possible to remove the function keyword and the colon altogether:
+    const person = {
+        name: "Taylor",
+        sayHello() {
+            return `Hello! My name is ${this.name}.`;
+        }
+    };
+- The class keyword provides a new syntax to create objects. The class keyword declares a new function to which a constructor is added.
+    This new constructor is then invoked when the keyword "new" is used to create a new object:
+        class Vegetable {                               \\ class function definition
+            constructor(name) {                         \\ constructor definition
+                this.name = name;
+            }
+        }
+        const carrot = new Vegetable("carrot");         \\ new object creation with the invoking of the constructor
