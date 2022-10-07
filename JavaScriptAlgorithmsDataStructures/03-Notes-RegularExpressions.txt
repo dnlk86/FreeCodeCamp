@@ -1,0 +1,20 @@
+- Regex are use in programming to match parts of strings with certain patterns. Quotation marks are not required in regex.
+- JS has multiple offers multiple ways to use regular expressions, one of those is the .test() method, it takes a string as parameter
+    and applies it to a regex and returns true or false.
+- To find a word in a string the regex is /someWord/ (no quote marks):
+    let someString = "this is some random text";
+    let someWord /some/;
+    someWord.test(someString);          \\ in this case it returns true
+- The /someWord/ regex searches for a literal match, also the letter case matters here.
+- It is possible to search for multiple patterns using the alternation or OR operator: |. This operator matches patterns either before
+    or after it, for example:
+        /yes|no|maybe/                  \\ it tries to match one of those patterns
+- Multiple cases can be matched by adding a so called flag to the regex. By adding the (i) flag is possible to match strings regardless
+    the letter case:
+        /ignoreCase/i
+- Matches found with the .test() method (it returns true/false) can be actually extracted with the .match() method, it takes a Regex
+    as a argument and is applied to a string:
+        "Hello World".match(/Hello/);   \\ it returns an array with the found matches, in this case ["Hello"]
+- To extract all the matches found for a certain pattern the global search flag (g) can be used:
+    "repeat repeat repeat".match(/repeat/);         \\ it returns ["repeat", "repeat", "repeat"]
+- Flags can be combined with each other.
