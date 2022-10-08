@@ -1,5 +1,5 @@
-- Regex are use in programming to match parts of strings with certain patterns. Quotation marks are not required in regex.
-- JS has multiple offers multiple ways to use regular expressions, one of those is the .test() method, it takes a string as parameter
+- Regex are used in programming to match parts of strings with certain patterns. Quotation marks are not required in regex syntax.
+- JS offers multiple ways to use regular expressions, one of those is the .test() method, it takes a string as parameter
     and applies it to a regex and returns true or false.
 - To find a word in a string the regex is /someWord/ (no quote marks):
     let someString = "this is some random text";
@@ -18,3 +18,21 @@
 - To extract all the matches found for a certain pattern the global search flag (g) can be used:
     "repeat repeat repeat".match(/repeat/);         \\ it returns ["repeat", "repeat", "repeat"]
 - Flags can be combined with each other.
+- The wildcard character (.) is used when not all the exact characters in the pattern are known. The wildcard also called dot or period 
+    will match any one char:
+        let huRegex = /hu./;        \\ this regex will match "hug", "hut", "huh", "hum" and so on
+- Character classes(sets) add some flexibility to literal pattern searches. They allow you to define a group of characters you wish to match
+    by placing them inside square brackets:
+        let bgRegex = /b[aiu]g/;    \\ it will match "bag", "big" and "bug"
+- Inside a character set is possible to define a range by using a hyphen between the starting and ending char, for example [a-e] to match
+    the characters from a to e.
+- Hyphen usage can be also applied to a range of numbers, ex. [0-9]. It's also possible to combine letters and numbers, ex. /[a-z0-9]/ig.
+- The caret character (^) allows to create negated character sets with the following syntax:
+    const myRegex = /[^aeiou]/gi    \\ it searches globally and indipendet from case char that are not aeiou. 
+- The plus (+) character allows to search for repeated characters, or groups of them, that appear one or more times subsequently: /a+/g
+- The asterisk character (*) looks for characters that occur zero or more times: /a*/
+- Greedy and lazy matching are the two possbile ways regular expressions behave. The first one is the default. It looks for the longest
+    possible part of the string that fits the regex pattern and returns it as a string. The lazy match looks for the shortest possible
+    match to the regular expression. For example in the string "titanic" with a regex like /t[a-z]*i/ greedy match will return the
+    string ["titani"] since the * char will look for the max number of char in between t and the final i. If we want to apply lazy
+    matching the we need to add the question mark character (?) in the regex: /t[a-z]*?i/, that will return ["ti"].
