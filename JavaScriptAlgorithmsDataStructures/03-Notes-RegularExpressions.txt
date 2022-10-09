@@ -36,3 +36,11 @@
     match to the regular expression. For example in the string "titanic" with a regex like /t[a-z]*i/ greedy match will return the
     string ["titani"] since the * char will look for the max number of char in between t and the final i. If we want to apply lazy
     matching the we need to add the question mark character (?) in the regex: /t[a-z]*?i/, that will return ["ti"].
+- As seen before the caret (^) is used to create negated charater sets. Outside character sets it is used to search for patterns at
+    the beginning of strings. 
+- The dollar sign ($) can be use to search patterns at the end of strings: /pattern$/.
+- The shortcut \w matches all possible char of the alphabet, lower and uppercase, all the numbers and underscores as well: [a-zA-Z-0-9_]
+    It is called shorthand character classes.
+- The opposite of \w searches for all the non-alphanumeric characters: \W = [^a-zA-Z0-9_].
+- A shortcut to match all the numbers and digits is: \d = [0-9].
+- All non-numbers characters can be serached with the following shorthand: \D = [^0-9].
