@@ -43,4 +43,27 @@
     It is called shorthand character classes.
 - The opposite of \w searches for all the non-alphanumeric characters: \W = [^a-zA-Z0-9_].
 - A shortcut to match all the numbers and digits is: \d = [0-9].
-- All non-numbers characters can be serached with the following shorthand: \D = [^0-9].
+- All non-numbers characters can be searched with the following shorthand: \D = [^0-9].
+- It's possible to match any kind of white space, carriage return, tab, form feed and newline characters with the shortcut \s, 
+    it works similarly to the character class [\r\t\f\n\v].
+- Just like other shorthands it is possible to search for everything except whitespace with \S (uppercase S) [^ \r\t\f\n\v].
+- Quantity specifiers allow to specify the lower and upper number of patterns to match. The syntax is {lowerNum, upperNum}.
+    For example: /a{3,5}h/      \\ in this case the match will be found if "a" appers from 3 to 5 times in a string followed by "h".
+- It's also possible to specify only the lower number of patterns: /a{3,}h/     \\ here the min is 3, no upper bound
+- By putting just one value within the curly braces will be specified the exact number of patterns needed to have a match: /ha{3}h/.
+- The question mark (?) allows to check for the existence of an element, it checks for zero or one of the preceding element.
+    The meaning of this symbol is like saying that the previous element is optional.
+- Lookaheads are patterns that tell JS to look-ahead in the string to check for a pattern further along (they work like an if statement?).
+    Lookaheads can be positive (?=...) in case they check for the existence of a pattern, or negative (?!...) in case they check
+    for the non-existence of a pattern. Both type of lookaheads do not return the pattern of the string they are checking.
+- To check for groups of characters parentheses are used (). To find either "Penguin" or (|) "Pumpkin": /P(engu|umpk)in/g
+- Capture groups allow to match substrings that occur multiple times in a string. Capture groups are constructed by enclosing the
+    regex pattern to capture in parentheses. The substring captured is saved to a temporary variable which can be accessed within
+    the same regex using a backslash and the number of the capture group (those are numbered from left to right starting at 1): 
+            /(\w+) \1 \1/           \\ it matches a word that occurs three times in a row, \1 is the capture group (there's only one).
+            /^(\d+)(\s)\1\2\1$/g    \\ it matches 3 identical groups of numbers separated by one space.
+- Searches can be even more powerful by changing or replacing the text matched. The .replace() method can take a regex as first parameter
+    and the text to replace as second:
+        "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');       \\ capture groups can be accessed also with dollar signs ($)
+                                                            \\ $1 = "Code"
+                                                            \\ $2 = "Camp"
