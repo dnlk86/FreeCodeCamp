@@ -1,0 +1,19 @@
+- The console.log() method is one of the most important debugging tools, it "prints" the output of what's within its parentheses 
+    to the console of the browser.
+- Among the methods to handle the outputs in the console there are .log(), .warn(), .clear() to name a few.
+- The .typeof() method checks the data structure, or type, of a variable. It's useful to avoid type errors. It can be passed as a
+    parameter to the console.log() method.
+- One really common type of bug is the spelling error. JS is case sensitive, and so writing a variable or a function with the
+    wrong name can cause a reference error.
+- Another syntax error to be aware of is that all opening parentheses, brackets, curly braces, and quotes have a closing pair.
+- When using quotes, either single or double, it is important to be consistent and be careful not to close the string too early 
+    by mistake. That can be avoided by using correctly the escape char (\) when the quote char is actually needed in a text.
+- In control flow expressions pay attention not to use assignment operator (=) in place of equality (==) or strict equality (===) op.
+- Calling functions, even the ones that don't expect a parameter, without open and close parentheses. It can cause assigning a
+    function to a variable rather than its result for example.
+- Another common bug is passing arguments in the wrong order in a function call.
+- Off by one errors (OBOE) occur when cicling through an array for example the last index is a.length instead of arr.length - 1.
+    By trying to access an index equal to the length, the program may throw an "index out of range" reference error or print undefined.
+- Re-initializing a variable in a loop or not doing it properly can end up in an infinite loop if the terminal condition is never met.
+    A possible solution to those kind of bugs is to console.log() the variable every cycle of the loop to see how it develops.
+- Correctly setting a terminal condition in a loop to prevent infinite loops.
