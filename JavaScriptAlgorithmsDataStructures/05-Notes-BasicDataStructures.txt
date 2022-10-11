@@ -14,3 +14,11 @@
 - The third parameter that .splice() can accept is used to add new elements to the array. So the method allows to quickly switch out
     an element or a set of elements with a new one:
         arr.splice(startIndex, elementsToDelete, firstNewEl, secondNewEl, ..., nthNewEl);
+- The .slice() method extracts/copies a subset of an array, not modifiying the original array it's called upon. It takes two parameters,
+    the index where to start the extraction and the index where to stop (the element at this index is not included).
+- On the other hand the spread operator (...arrName) allows to copy all the elements(just the content of the arr) of an array in order.
+- A huge advantage of the spread operator is the possibility tom combine multiple arrays:
+    const arr2 = [1, 2, "a", ...arr1, 3];       \\ note that ...arr1 are just the elements of arr1
+- Since arrays are mutable data structures it's important to be able to verify the existence of elements. That is achieved by the 
+    .indexOf() method, which takes an element as argument and returns the index of that element. In case the element is not found
+    it returns -1.
