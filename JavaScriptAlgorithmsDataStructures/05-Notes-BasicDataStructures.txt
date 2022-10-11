@@ -1,0 +1,13 @@
+- The array is a data structure, its simplest form is the one-dimensional array, meaning that it only has one level (no nested arrays 
+    it only contains other valid JS data types).
+- Multi-dimensional arrays ([]) contain other arrays or JS objects ({}).
+- The fundamental feature of any data structure is, of course, the ability to not only store data, but to be able to retrieve that 
+    data on command. This can be done with the bracket notation and the use of indexes in arrays (zero-indexed) for example.
+    Pre-existing data can be also accessed and modified in the same way.
+- Arrays are mutable, their content hence their length can be modified. Elements can be added with the methods .unshift() at the front
+    and .push() at the end of the array. Both can add multiple elements at the same time.
+- In the same way elements can be removed, from the front of the array with the .shift() method or from the end with the .pop() method.
+    Both methods return the removed element. Both remove just one element at the time and do not take parameters.
+- To remove any number of consecutive elements from anywhere in an array there is the method .splice() that takes two parameters,
+    the index where to start removing (inclusive) and the number of consecutive elements to remove. The .splice() method both
+    modifies the original array and also returns the removed elements in a new array.
