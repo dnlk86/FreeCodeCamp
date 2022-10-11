@@ -22,3 +22,20 @@
 - Since arrays are mutable data structures it's important to be able to verify the existence of elements. That is achieved by the 
     .indexOf() method, which takes an element as argument and returns the index of that element. In case the element is not found
     it returns -1.
+- There are different ways to iterate through arrays in JS, like the methods .every(), .forEach(), .map(), etc however the most flexible
+    and the one the offers the greatest amount of control is the simple for loop.
+- Objects are at their core collections of key-value pairs. In other terms pieces of data(values) mapped to unique identifiers called
+    properties(keys).
+- Adding a property to an object can be done with the dot notation (myObj.newProperty = "someVal";) or with the bracket notation
+    (myObj["newProperty"] = "someVal";). The bracket notation is required if the property has a space in it(my new property: "something").
+    Passing a name in the bracket notation without the quotes will be evaluated as a variable and its content passed as the prop name.
+- Objects can be nested to an arbitrary depth and their values can be any type of data supported in JS, including arrays and other objects.
+- Just like arrays it is possible to access inner properties by chaining multiple bracket notations or multiple dot notations.
+- A key-value pair of an object can be removed with the use of the delete keyword (the obj is directly modified, objs are mutable):
+    delete foods.apples;
+- To check for the existence of a property it is used the .hasOwnProperty() method: foods.hasOwnProperty("apples")  \\ returns true/false
+- Sometimes it is necessary to iterate through all the keys within an object. This is achieved with the special syntax called for...in
+    statement:
+        for (let food in foods) { do something... };    \\ the food variable is reset during each iteration
+                                                        \\ objects do not maintain an ordering to stored keys like arrays do
+- The Object.keys() method takes an object as the argument and returns an array of strings representig each property in the object.
