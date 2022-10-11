@@ -11,3 +11,6 @@
 - To remove any number of consecutive elements from anywhere in an array there is the method .splice() that takes two parameters,
     the index where to start removing (inclusive) and the number of consecutive elements to remove. The .splice() method both
     modifies the original array and also returns the removed elements in a new array.
+- The third parameter that .splice() can accept is used to add new elements to the array. So the method allows to quickly switch out
+    an element or a set of elements with a new one:
+        arr.splice(startIndex, elementsToDelete, firstNewEl, secondNewEl, ..., nthNewEl);
