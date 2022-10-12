@@ -103,3 +103,52 @@ function titleCase(str) {
   }
   
   titleCase("I'm a little tea pot");
+
+// SLICE AND SPLICE
+function frankenSplice(arr1, arr2, n) {
+    const res = [...arr2];
+    res.splice(n, 0, ...arr1);
+    return res;
+  }
+  
+  frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// FALSY BOUNCER
+function bouncer(arr) {
+    const res = [];
+    arr.map((v,i) => {v ? res.push(arr[i]) : null});
+    return res;
+  }
+
+// WHERE DO I BELONG
+function getIndexToIns(arr, num) {
+    arr.push(num);
+    arr.sort((a, b) => a - b);  // passed a compare function to the sort method to order the numbers
+    return arr.indexOf(num);
+  }
+  
+  getIndexToIns([40, 60], 50);
+
+// MUTATIONS
+function mutation(arr) {
+    for (let i in arr[1].toLowerCase()) {
+      if (arr[0].toLowerCase().indexOf(arr[1][i].toLowerCase()) == -1) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  mutation(["hello", "hey"]);
+
+// CHUNKY MONKEY
+function chunkArrayInGroups(arr, size) {
+    let res = [];
+    for (let i=0; i<arr.length; i += size) {
+      console.log(i);
+      res.push(arr.slice(i, i + size));
+    }
+    return res;
+  }
+  
+  chunkArrayInGroups(["a", "b", "c", "d"], 2);
