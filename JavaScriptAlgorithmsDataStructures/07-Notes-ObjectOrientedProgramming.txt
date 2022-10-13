@@ -1,0 +1,15 @@
+- Real world objects are tangible things people can interact with.
+- Objects in JS are used to model real-wold objects. They have properties with certain values and particular behaviors.
+- The dot (.) notation used on the objects name followed by the name of the property grants access to the value stored for that property
+    (myObj.propName).
+- Methods are properties that are functions, those add different behavior to the object.
+- Calling properties in object's methods directly with the obj name using the dot notation may cause problems. If the obj name is
+    changed, then also the reference to the property inside the method has to be changed. A way to avoid this is by referencig to the
+    object using the keyword "this":    this.propName.
+- Constructors are functions that create new objects, they define properties and behaviors and do not return a value like a function might.
+- Constructors are defined with capitalized names to distinguish them from other functions.
+- Constructors use the keyword this to set properties of the object, this is a reference to the obj that is being created. 
+- The "new" operator needs to be used when a constructor is invoked:
+    const myDog = new Dog();    // this tell JS to create an instance of the obj Dog and store it in the variable myDog.
+- Constructors like every function can accept arguments, so when the constructor is invoked the user can define right away
+    the values of some object's properties (without needing to set those properties later with the dot notation).
