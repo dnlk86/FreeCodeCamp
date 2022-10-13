@@ -24,3 +24,23 @@
 - Prototype properties are part of the constructor.
 - To recap: Own properties are defined directly on the object instance itself. And prototype properties are defined on the prototype.
 - To mention that the constructor itself is a property: beable.constructor === Dog evaluates to true, Dog is the constr. property.
+- Properties can be added to the prototype one at the time, but after a few this process becomes tedious. Another way is to set the
+    prototype to a new object instead that already contains the properties. This way the props are added all at once:
+        Dog.prototype = {
+            numlegs: 4,
+            something: ...
+        }
+- By setting the prototype to a new object the constructor property of the object is erased. To avoid that the constructor property
+    needs to be manually defined inside the prototype:
+        Dog.prototype = {
+            constructor: Dog,
+            numLegs: 4,
+            ...
+        }
+- An object inherits its prototype directly from the constructor function that created it (just like sons inherit genes from parents).
+- All objects in JavaScript (with a few exceptions) have a prototype. Also, an object’s prototype itself is an object, this means
+    that a prototype can have its own prototype:
+        Object.prototype.isPrototypeOf(Dog.prototype);      \\ evaluates true
+        Dog.prototype.isPrototypeOf(beagle);                \\ evaluates true
+- In this prototype chain, Dog is the supertype for beagle, while beagle is the subtype. Object is a supertype for both Dog and beagle. 
+    Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.
