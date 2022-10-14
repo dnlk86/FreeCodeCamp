@@ -77,3 +77,30 @@
 - A constructor function that inherits its prototype object from a supertype constructor function can still have its own methods in 
     addition to inherited methods:
         Dog.prototype.bark = function() { console.log("wof wof wof!"); };
+- As seen child-objects inherit from their parent-object when when their prototype reference to their parent's prototype.
+    It is possible to override the properties child inherits by re-declaring those properties in the child's prototype.
+- Inheritance is not always the right solution with objects, expecially when two objects are not really related to each other (Bird, Airplane).
+    In such cases it is best to use mixins, those are collections of functions shared by multiple unrelated objects:
+        let glideMixin = function(obj) {            \\ declaring the mixin
+            obj.glide = function() {
+                console.log("I'm gliding!");
+            }
+        }
+
+        glideMixin(bird);                           \\ applying the mixin to two unrelated objects
+        glideMixin(boat);
+
+        bird.glide();                               \\ invoking the method applied by the mixin to the two objects
+        boat.glide();                               \\ now both objects have this method even if they're not related
+- Closures protect properties within an object from being modified externally. This is achieved by creating a variable inside the
+    constructor function, this changes the scope of the variable from public to private. Now only a function created in the same context
+    of the variable can have access to the variable, hence only a privileged method can modify the variable. This way of structuring 
+    the properties is called closure:
+        function Bird() {
+            // this.weight = 15;                    \\ declaring a property without closure
+            let weight = 15;                        \\ declaring a variable with a scope limited to this constructor function
+
+            this.getWeight = function() {           \\ declaring a privileged method to access the value of the variable
+                return weight;                      \\ without accessing the variable directly
+            }
+        }
