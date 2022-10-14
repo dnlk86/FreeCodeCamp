@@ -104,3 +104,26 @@
                 return weight;                      \\ without accessing the variable directly
             }
         }
+- Immediately Invoked Function Expression (IIFE). This is a common JS pattern. This anonymous functions are declared and executed right away:
+    (function () {
+        console.log("Chirp, chirp!");
+    })();                                           \\ the two parentheses cause the function to be invoked immediately
+- IIFE are often used to group related functionality into a single object or module. This highly increase code reusability:
+    let motionModule = (function () {                   
+        return {                                    \\ packed the two mixins into the motionModule
+            glideMixin: function(obj) {
+            obj.glide = function() {
+                console.log("Gliding on the water");
+            };
+            },
+            flyMixin: function(obj) {
+            obj.fly = function() {
+                console.log("Flying, wooosh!");
+            };
+            }
+        }
+        })();
+
+        motionModule.glideMixin(duck);              \\ applying the glideMixin that is a property of the motionModule obj to duck (also an obj)
+        duck.glide();                               \\ invoking the recently applied glide() method
+
