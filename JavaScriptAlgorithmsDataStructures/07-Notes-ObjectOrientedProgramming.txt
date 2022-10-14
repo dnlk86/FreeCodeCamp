@@ -44,3 +44,36 @@
         Dog.prototype.isPrototypeOf(beagle);                \\ evaluates true
 - In this prototype chain, Dog is the supertype for beagle, while beagle is the subtype. Object is a supertype for both Dog and beagle. 
     Object is a supertype for all objects in JavaScript. Therefore, any object can use the hasOwnProperty method.
+- DRY (don't repeat yourself). Repeated code is more prone to error and bug fixing becomes more problematic.
+- So far the creation of new instances of an object has been done with the "new" operator:
+    let dog = new Animal();
+    There is a better way in terms of inheritance to achieve this goal:
+        let dog = Object.create(Animal.prototype);      \\ this creates a new obj (dog) and sets its prototype (to Animal)
+    By doing this it is possible to access to the prototype methods for instance without having to re-declare them.
+        dog instanceof Animal => true
+- To achieve the full inheritance from the supertype to the subtype is necessary to set the prototype of the subtype equal to the
+    prototype of the supertype, in other words:
+        Dog.prototype = Object.create(Animal.prototype);    \\ now the recipe to create a Dog also includes all the key ingredients
+                                                            \\ to create an Animal
+- To sum up the whole process on inheritance, objects and prototypes:
+    function Animal() { }                               \\ declaration of the Animal object (supertype)
+
+    Animal.prototype = {                                \\ creation of the Animal prototype
+    constructor: Animal,                                \\ declaration of the constructor property
+    eat: function() {                                   \\ declaration of the eat method
+        console.log("nom nom nom");
+    }
+    };
+
+    function Dog() { }                                  \\ declaration of the Dog object (subtype)
+
+    Dog.prototype = Object.create(Animal.prototype);    \\ creation of the Dog prototype that inherits from the Animal prototype
+
+    let beagle = new Dog();                             \\ creation of an instance of the Dog object called beagle that inherits both from 
+                                                        \\ Dog and from Animal, the beagle can use the .eat() method!
+- One problematic that needs to be addressed is that now beagle inherits also the constructor from Animal, but its constructor should
+    be Dog instead. To fix that the constructor in Dog needs to be set manually:
+        Dog.prototype.constructor = Dog;
+- A constructor function that inherits its prototype object from a supertype constructor function can still have its own methods in 
+    addition to inherited methods:
+        Dog.prototype.bark = function() { console.log("wof wof wof!"); };
