@@ -15,3 +15,13 @@
 - Another principle of FP is to always declare the dependencies explicitly. If a functions relies on a value that leaves outside the
     the function body, this value has to be passed as an argument to the function.
 - Functions in JS are first class objects, this means that they can be used as any other object.
+- the Array mrthod .filter() calls a callback function on every item in an array and returns a new array containing only the elements
+    for which the callback function return true. Like map() it accepts three arguments, the current value, the current index and the 
+    array upon it is used.
+- The .slice() method return a copy of certain elements of an array, it takes two arguments, the starting index and the ending index
+    (not inclusive). If the arguments are not provided it makes a copy of the whole array. If just one is provided makes a copy from 
+    the starting index till the end of the array.
+- The .splice() method is used to remove parts of an array, unlike .slice() however it modifies the original array. Like slice it
+    takes a starting index. The second arguments it takes is the number of consecutive elements to remove. It accepts also as third
+    argument element or elements to add in the array in place of what has been removed (one or more comma separated elements can be
+    added).
