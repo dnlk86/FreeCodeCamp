@@ -1,0 +1,17 @@
+- Functional programming is a programming style where the code is constituted by isolated pure functions (same input produces always same 
+    output), there is no dependence on the state of the program (including global variables that are subject to change). Changes of the
+    state of the program outside the functions are carefully controlled.
+- Callbacks are the functions that are passed into another function to decide the invocation and the behavior of that function.
+- Functions that can be stored in variables, passed to or returned from other functions are called first class functions.
+    Those functions that are passed to or returned from another functions can also be called a lambda.
+- Functions that accept or return other functions are called higher order functions.
+- Functional programming is in general a good habit, it keeps the code clean and easy to manage and prevents from sneaky bugs.
+- Imperative style of programming is the one that gives the computer a set of statements to perform a task (a classic example is writing 
+    a for loop that gives exact directions to iterate over the indices of an array).
+- Declarative programming, the one used in functional programming, tells the computer what has to be done by calling methods or functions.
+    In this case instead of using a for loop the choice is to use for example the map() method that handles the iteration of an array.
+- One of the core principles in functional programming is to not change things, changes lead to bugs. In FP changing things is called 
+    mutation and the outcome is called side effect. Ideally a function is a pure function and has no side effects.
+- Another principle of FP is to always declare the dependencies explicitly. If a functions relies on a value that leaves outside the
+    the function body, this value has to be passed as an argument to the function.
+- Functions in JS are first class objects, this means that they can be used as any other object.
