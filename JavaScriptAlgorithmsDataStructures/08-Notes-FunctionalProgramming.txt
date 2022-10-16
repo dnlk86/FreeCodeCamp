@@ -25,3 +25,27 @@
     takes a starting index. The second arguments it takes is the number of consecutive elements to remove. It accepts also as third
     argument element or elements to add in the array in place of what has been removed (one or more comma separated elements can be
     added).
+- The .concat() method, that works both on strings and arrays, joins two arrays/strings together. It is called to an item and the
+    second one to join is passed as an argument to the method. A new item is returned, so neither of the original two is modified.
+- Func programming is all about creating and using non-mutating functions, so .concat() is prefered to .push().
+- The .sort() method as the name says sorts the elements of an array based on the callback function that accepts as argument. The callback
+    function is called compareFunction. Since JavaScript's default sorting method is by string Unicode point value it is always
+    better to pass a compareFunction when sorting an array to prevent unexpected behavior:
+        function alphabeticalOrder(arr) {
+            return arr.sort((a,b) => (a===b ? 0 : a<b ? -1 : 1));       \\ passed a compare function to sort the array ascending
+        }
+- Side effect of the sort method is that it mutates the original array (against functional programming principles). To avoid that
+    is to copy the content of the array in a new one, or to concatenate an empty array to one being sorted with slice() or concat():
+        function nonMutatingSort(arr) {
+            let res = [...arr];                                         \\ coping the content in a new arr with the spread operator
+            return res.sort((a,b) => (a===b ? 0 : a<b ? -1 : 1));
+        }
+- The .split() method splits a string into an array of strings based on the delimiter that is passed as argument. The delimiter is a
+    character, or a regular expression. In case nothing is passed the string is turned into an array of characters:
+        "some text bla bla".split(" ");                                 \\ in this case the result is an array of words.
+    Note that strings are immutable so the original string won't be modified:
+        function splitify(str) {
+            return str.split(/\W/gi);
+        }
+
+        splitify("Hello World,I-am code")   ->   [ 'Hello', 'World', 'I', 'am', 'code' ]
