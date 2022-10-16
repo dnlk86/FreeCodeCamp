@@ -49,3 +49,25 @@
         }
 
         splitify("Hello World,I-am code")   ->   [ 'Hello', 'World', 'I', 'am', 'code' ]
+- The .join() method is used to join together elements of an array into a string. Like split it accepts a delimiter to place between
+    the items in the string. 
+- The .every() method works with arrays to check if every element passes a particular test (callback function), returns true or false.
+- The .some() method checks if any of the array's elements passes a particular test in the callback, returns true if any passes the test
+    and false if not.
+- The arity of a function is the number of arguments it requires.
+- Currying a funtion means to convert a function of arity N into N functions of arity 1. That is achieved by restructuring the original
+    N arity function into N nested higher order and first class functions that accept max one argument each:
+        function unCurried(x, y) {             
+            return x + y;
+        }
+        function curried(x) {
+            return function(y) {
+                return x + y;
+            }
+        }
+        const curried = x => y => x + y
+- This is useful in programs where it is not possible to supply all the argumets to a function at one time. That is done by saving
+    each function call into a variable, which will hold the returned function reference that takes the next argument when it's 
+    available.
+- Partial application can be described as applying a few arguments to a function at a time and returning another function that is 
+    applied to more arguments.
