@@ -72,3 +72,68 @@ function spinalCase(str) {
 }
 
 spinalCase("This Is Spinal Tap");
+
+// Pig Latin
+function translatePigLatin(str) {
+    console.log("original str: " + str);
+    if (/^[aeiou]+/gi.test(str)) {
+        str += "way";
+    } else {
+        str = str.replace(/^([^aeiou]+)(.*)/gi, "$2$1ay");
+    }
+    return str;
+}
+
+translatePigLatin("consonant");
+
+// Search and Replace
+function myReplace(str, before, after) {
+    let res = "";
+    let re = new RegExp(before, "g");
+    after =
+        (/^[A-Z]/.test(before)
+            ? after[0].toUpperCase()
+            : after[0].toLowerCase()) + after.slice(1);
+    res = str.replace(re, after);
+    return res;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+// DNA Pairing
+function pairElement(str) {
+    let res = [];
+    for (let i = 0; i < str.length; i++) {
+        switch (str[i]) {
+            case "A":
+                res.push(["A", "T"]);
+                break;
+            case "T":
+                res.push(["T", "A"]);
+                break;
+            case "C":
+                res.push(["C", "G"]);
+                break;
+            case "G":
+                res.push(["G", "C"]);
+                break;
+        }
+    }
+    return res;
+}
+
+pairElement("GCG");
+
+// Missing letters
+function fearNotLetter(str) {
+    const a = "abcdefghijklmnopqrstuvwxyz";
+    const start = a.indexOf(str[0]);
+    const end = a.indexOf(str[str.length - 1]);
+    let res = a.slice(start, end + 1);
+    for (let i = 0; i < str.length; i++) {
+        res = res.replace(new RegExp(str[i], "g"), "");
+    }
+    return res === "" ? undefined : res;
+}
+
+fearNotLetter("abce");
