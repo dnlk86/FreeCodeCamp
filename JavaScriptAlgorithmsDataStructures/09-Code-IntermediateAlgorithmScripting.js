@@ -137,3 +137,47 @@ function fearNotLetter(str) {
 }
 
 fearNotLetter("abce");
+
+// Sorted Union
+function uniteUnique(arr) {
+    let res = [];
+    for (let i = 0; i < Object.entries(arguments).length; i++) {
+      Object.values(arguments)[i].map(val => {
+        if (!res.includes(val)) {
+          res.push(val);
+        }
+      });
+    }
+    return res;
+  }
+  
+  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+// Convert HTML Entities
+function convertHTML(str) {
+    let res = "";
+    for (let i = 0; i < str.length; i++) {
+      switch (str[i]) {
+        case "&":
+          res += "&amp;";
+          break;
+        case "<":
+          res += "&lt;";
+          break;
+        case ">":
+          res += "&gt;";
+          break;
+        case "\'":
+          res += "&apos;"
+          break;
+        case "\"":
+          res += "&quot;";
+          break;
+        default:
+          res += str[i];
+      }
+    }
+    return res;
+  }
+  
+  convertHTML("Dolce & Gabbana");
