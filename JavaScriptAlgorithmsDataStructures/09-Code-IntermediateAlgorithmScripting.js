@@ -142,42 +142,95 @@ fearNotLetter("abce");
 function uniteUnique(arr) {
     let res = [];
     for (let i = 0; i < Object.entries(arguments).length; i++) {
-      Object.values(arguments)[i].map(val => {
-        if (!res.includes(val)) {
-          res.push(val);
-        }
-      });
+        Object.values(arguments)[i].map((val) => {
+            if (!res.includes(val)) {
+                res.push(val);
+            }
+        });
     }
     return res;
-  }
-  
-  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 // Convert HTML Entities
 function convertHTML(str) {
     let res = "";
     for (let i = 0; i < str.length; i++) {
-      switch (str[i]) {
-        case "&":
-          res += "&amp;";
-          break;
-        case "<":
-          res += "&lt;";
-          break;
-        case ">":
-          res += "&gt;";
-          break;
-        case "\'":
-          res += "&apos;"
-          break;
-        case "\"":
-          res += "&quot;";
-          break;
-        default:
-          res += str[i];
-      }
+        switch (str[i]) {
+            case "&":
+                res += "&amp;";
+                break;
+            case "<":
+                res += "&lt;";
+                break;
+            case ">":
+                res += "&gt;";
+                break;
+            case "'":
+                res += "&apos;";
+                break;
+            case '"':
+                res += "&quot;";
+                break;
+            default:
+                res += str[i];
+        }
     }
     return res;
-  }
-  
-  convertHTML("Dolce & Gabbana");
+}
+
+convertHTML("Dolce & Gabbana");
+
+// Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+    let n = 1;
+    let fib = [];
+    while (n <= num) {
+        if (n === 1) {
+            fib.push(n, n);
+            n += n;
+        } else {
+            fib.push(n);
+            n += fib[fib.length - 2];
+        }
+    }
+    return fib.filter((val) => val % 2 === 1).reduce((a, b) => a + b);
+}
+
+sumFibs(4);
+
+// Sum All Primes
+function sumPrimes(num) {
+    let res = 0;
+    for (let i = 0; i <= num; i++) {
+        if (isPrime(i)) {
+            res += i;
+        }
+    }
+    return res;
+}
+
+function isPrime(num) {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
+    }
+    return num > 1;
+}
+
+sumPrimes(10);
+
+// Smallest Common Multiple
+function smallestCommons(arr) {
+    let newArr = [];
+    arr.sort((a, b) => a - b);
+    for (let i = arr[0]; i <= arr[1]; i++) {
+        newArr.push(i);
+    }
+    return newArr.reduce((a, b) => lcm(a, b));
+}
+
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+const lcm = (a, b) => (a * b) / gcd(a, b);
+
+smallestCommons([1, 5]);
