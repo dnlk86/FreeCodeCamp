@@ -234,3 +234,43 @@ const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 const lcm = (a, b) => (a * b) / gcd(a, b);
 
 smallestCommons([1, 5]);
+
+// Drop it
+function dropElements(arr, func) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            res = arr.slice(i);
+            return res;
+        }
+    }
+    return [];
+}
+
+dropElements([1, 2, 3], function (n) {
+    return n < 3;
+});
+
+// Steamroller
+function steamrollArray(arr) {
+    let res = arr.reduce(flt, []);
+    return res;
+}
+
+const flt = (acc, v) =>
+    v instanceof Array ? v.reduce(flt, acc) : acc.concat(v);
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+// Binary Agents
+function binaryAgent(str) {
+    let c = str.split(" ");
+    return c.reduce(
+        (res, bin) => res.concat(String.fromCharCode(parseInt(bin, 2))),
+        ""
+    );
+}
+
+binaryAgent(
+    "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
+);
