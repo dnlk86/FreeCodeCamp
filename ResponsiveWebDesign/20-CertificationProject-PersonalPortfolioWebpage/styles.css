@@ -1,7 +1,7 @@
 :root {
     --navbar-background: #003459;
     --portfolio-background: #00171f;
-    --neon-text:  #ffffff;
+    --neon-text: #ffffff;
     --neon-shadow: #4895ef;
     --color1: #ffffff;
     --color2: #00171f;
@@ -10,7 +10,9 @@
     --color5: #00a8e8;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     font-size: 18px;
 }
@@ -33,7 +35,7 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     letter-spacing: 0.3rem;
 }
@@ -62,7 +64,7 @@ h3 {
 
 #navbar a {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     letter-spacing: 0.4rem;
     color: var(--neon-text);
@@ -80,16 +82,11 @@ h3 {
     bottom: -10px;
     transition: 0.3s;
     box-shadow:
-        /* white glow */
-        0 0 4px var(--neon-text),
-        0 0 11px var(--neon-text),
-        0 0 19px var(--neon-text),
-        /* colored glow */
-        0 0 40px var(--neon-shadow),
-        0 0 80px var(--neon-shadow),
-        0 0 90px var(--neon-shadow),
-        0 0 100px var(--neon-shadow),
-        0 0 150px var(--neon-shadow);
+        /* white glow */ 0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text), 0 0 19px var(--neon-text),
+        /* colored glow */ 0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow), 0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow), 0 0 150px var(--neon-shadow);
 }
 
 #navbar a:hover::after {
@@ -98,16 +95,11 @@ h3 {
 
 #navbar a:hover {
     text-shadow:
-        /* white glow */
-        0 0 4px var(--neon-text),
-        0 0 11px var(--neon-text),
-        0 0 19px var(--neon-text),
-        /* colored glow */
-        0 0 40px var(--neon-shadow),
-        0 0 80px var(--neon-shadow),
-        0 0 90px var(--neon-shadow),
-        0 0 100px var(--neon-shadow),
-        0 0 150px var(--neon-shadow);
+        /* white glow */ 0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text), 0 0 19px var(--neon-text),
+        /* colored glow */ 0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow), 0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow), 0 0 150px var(--neon-shadow);
 }
 
 /* WELCOME SECTION */
@@ -130,33 +122,24 @@ h3 {
     border-radius: 2rem;
     padding: 0.5em 3em;
     box-shadow:
-        /* white glow */
-        0 0 0.2rem #fff,
-        0 0 0.2rem #fff,
-        /* colored glow */
-        0 0 2rem var(--neon-shadow),
-        0 0 0.8rem var(--neon-shadow),
-        0 0 2.8rem var(--neon-shadow),
+        /* white glow */ 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+        /* colored glow */ 0 0 2rem var(--neon-shadow),
+        0 0 0.8rem var(--neon-shadow), 0 0 2.8rem var(--neon-shadow),
         inset 0 0 1.3rem var(--neon-shadow);
     animation: border-pulsate 2.5s infinite alternate;
 }
 
 .neon-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 100;
     letter-spacing: 0.3rem;
     color: var(--neon-text);
     text-shadow:
-        /* white glow */
-        0 0 4px var(--neon-text),
-        0 0 11px var(--neon-text),
-        0 0 19px var(--neon-text),
-        /* colored glow */
-        0 0 40px var(--neon-shadow),
-        0 0 80px var(--neon-shadow),
-        0 0 90px var(--neon-shadow),
-        0 0 100px var(--neon-shadow),
-        0 0 150px var(--neon-shadow);
+        /* white glow */ 0 0 4px var(--neon-text),
+        0 0 11px var(--neon-text), 0 0 19px var(--neon-text),
+        /* colored glow */ 0 0 40px var(--neon-shadow),
+        0 0 80px var(--neon-shadow), 0 0 90px var(--neon-shadow),
+        0 0 100px var(--neon-shadow), 0 0 150px var(--neon-shadow);
     animation: text-pulsate 2.5s infinite alternate;
     user-select: none;
 }
@@ -174,7 +157,7 @@ h3 {
     width: 25%;
     min-width: 400px;
     height: fit-content;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 200;
     letter-spacing: 0.3rem;
     color: var(--neon-text);
@@ -217,13 +200,9 @@ h3 {
     width: 100%;
     height: 100%;
     box-shadow:
-        /* white glow */
-        0 0 0.2rem #fff,
-        0 0 0.2rem #fff,
-        /* colored glow */
-        0 0 2rem var(--neon-shadow),
-        0 0 0.8rem var(--neon-shadow),
-        0 0 2.8rem var(--neon-shadow),
+        /* white glow */ 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+        /* colored glow */ 0 0 2rem var(--neon-shadow),
+        0 0 0.8rem var(--neon-shadow), 0 0 2.8rem var(--neon-shadow),
         inset 0 0 1.3rem var(--neon-shadow);
     border: 0.1rem solid var(--neon-text);
 }
@@ -245,12 +224,12 @@ h3 {
     place-content: center;
 }
 
-#links-container ul{
+#links-container ul {
     list-style: none;
 }
 
 #links-container a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: 0.4rem;
@@ -272,7 +251,7 @@ footer {
 footer p {
     margin: 0;
     padding-top: 25px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: 0.3rem;
@@ -283,87 +262,75 @@ footer p {
 /* ANIMATION */
 @keyframes text-pulsate {
     0% {
-        text-shadow: 
-            0 0 4px var(--neon-text),
-            0 0 11px var(--neon-text),
-            0 0 19px var(--neon-text),
-            0 0 40px var(--neon-shadow),
-            0 0 80px var(--neon-shadow),
-            0 0 90px var(--neon-shadow),
-            0 0 100px var(--neon-shadow),
-            0 0 150px var(--neon-shadow);
+        text-shadow: 0 0 4px var(--neon-text), 0 0 11px var(--neon-text),
+            0 0 19px var(--neon-text), 0 0 40px var(--neon-shadow),
+            0 0 80px var(--neon-shadow), 0 0 90px var(--neon-shadow),
+            0 0 100px var(--neon-shadow), 0 0 150px var(--neon-shadow);
     }
-    100% {       
-        text-shadow:
-            0 0 2px var(--neon-text),
-            0 0 4px var(--neon-text),
-            0 0 6px var(--neon-text),
-            0 0 10px var(--neon-shadow),
-            0 0 45px var(--neon-shadow),
-            0 0 55px var(--neon-shadow),
-            0 0 70px var(--neon-shadow),
-            0 0 80px var(--neon-shadow);
-        }  
+    100% {
+        text-shadow: 0 0 2px var(--neon-text), 0 0 4px var(--neon-text),
+            0 0 6px var(--neon-text), 0 0 10px var(--neon-shadow),
+            0 0 45px var(--neon-shadow), 0 0 55px var(--neon-shadow),
+            0 0 70px var(--neon-shadow), 0 0 80px var(--neon-shadow);
+    }
 }
 
 @keyframes text-flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        text-shadow: 
-            0 0 4px var(--neon-text),
-            0 0 11px var(--neon-text),
-            0 0 19px var(--neon-text),
-            0 0 40px var(--neon-shadow),
-            0 0 80px var(--neon-shadow),
-            0 0 90px var(--neon-shadow),
-            0 0 100px var(--neon-shadow),
-            0 0 150px var(--neon-shadow);
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow: 0 0 4px var(--neon-text), 0 0 11px var(--neon-text),
+            0 0 19px var(--neon-text), 0 0 40px var(--neon-shadow),
+            0 0 80px var(--neon-shadow), 0 0 90px var(--neon-shadow),
+            0 0 100px var(--neon-shadow), 0 0 150px var(--neon-shadow);
     }
-    20%, 24%, 55% {       
+    20%,
+    24%,
+    55% {
         text-shadow: none;
-    }  
+    }
 }
 
 @keyframes border-pulsate {
     0% {
         box-shadow:
-        /* white glow */
-        0 0 0.2rem #fff,
-        0 0 0.2rem #fff,
-        /* colored glow */
-        0 0 2rem var(--neon-shadow),
-        0 0 0.8rem var(--neon-shadow),
-        0 0 2.8rem var(--neon-shadow),
-        inset 0 0 1.3rem var(--neon-shadow);
+        /* white glow */ 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+            /* colored glow */ 0 0 2rem var(--neon-shadow),
+            0 0 0.8rem var(--neon-shadow), 0 0 2.8rem var(--neon-shadow),
+            inset 0 0 1.3rem var(--neon-shadow);
     }
     100% {
         box-shadow:
-        /* white glow */
-        0 0 0.1rem #fff,
-        0 0 0.1rem #fff,
-        /* colored glow */
-        0 0 1rem var(--neon-shadow),
-        0 0 0.5rem var(--neon-shadow),
-        0 0 1rem var(--neon-shadow),
-        inset 0 0 0.5rem var(--neon-shadow);
+        /* white glow */ 0 0 0.1rem #fff, 0 0 0.1rem #fff,
+            /* colored glow */ 0 0 1rem var(--neon-shadow),
+            0 0 0.5rem var(--neon-shadow), 0 0 1rem var(--neon-shadow),
+            inset 0 0 0.5rem var(--neon-shadow);
     }
-
 }
 
 @keyframes border-flicker {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
         box-shadow:
-        /* white glow */
-        0 0 0.2rem #fff,
-        0 0 0.2rem #fff,
-        /* colored glow */
-        0 0 2rem var(--neon-shadow),
-        0 0 0.8rem var(--neon-shadow),
-        0 0 2.8rem var(--neon-shadow),
-        inset 0 0 1.3rem var(--neon-shadow);
+        /* white glow */ 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+            /* colored glow */ 0 0 2rem var(--neon-shadow),
+            0 0 0.8rem var(--neon-shadow), 0 0 2.8rem var(--neon-shadow),
+            inset 0 0 1.3rem var(--neon-shadow);
     }
-    20%, 24%, 55% {       
+    20%,
+    24%,
+    55% {
         box-shadow: none;
-    }  
+    }
 }
 
 /* MEDIA QUERIES */

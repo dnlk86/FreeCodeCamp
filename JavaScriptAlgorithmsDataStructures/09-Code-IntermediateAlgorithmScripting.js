@@ -274,3 +274,38 @@ function binaryAgent(str) {
 binaryAgent(
     "01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"
 );
+
+// Everything Be True
+function truthCheck(collection, pre) {
+    let res = collection.filter((v) => v[pre]);
+    return res.length === collection.length;
+}
+
+truthCheck(
+    [
+        { name: "Quincy", role: "Founder", isBot: false },
+        { name: "Naomi", role: "", isBot: false },
+        { name: "Camperbot", role: "Bot", isBot: true },
+    ],
+    "isBot"
+);
+
+// Arguments Optional
+function addTogether() {
+    const arr = [...arguments];
+    if (arr.length === 1) {
+        return !Number.isInteger(arr[0])
+            ? undefined
+            : function () {
+                  return Number.isInteger([...arguments][0])
+                      ? arr[0] + [...arguments][0]
+                      : undefined;
+              };
+    } else {
+        return !Number.isInteger(arr[0]) || !Number.isInteger(arr[1])
+            ? undefined
+            : arr[0] + arr[1];
+    }
+}
+
+addTogether(2, 3);
