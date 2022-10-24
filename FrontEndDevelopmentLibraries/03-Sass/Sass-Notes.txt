@@ -1,0 +1,42 @@
+- Sass, syntactically awesome stylesheets, is a language extension of css (it extends vanilla css features), allows to use variables,
+    nest css, add logic and loops and more.
+- Variables are defined in sass using the $ sign followed by the variable name: $heading-color: green;
+    It uses a syntax similar to js except for the dollar sign and the colon instead of the assignment operator.
+- Sass allows, unlike vanilla css, to nest css rules, this helps organizing the code:
+    nav {
+        background-color: red;
+            ul {
+                list-style: none;
+                    li {
+                        display: inline-block;
+                    }
+            }
+    }
+- In sass mixins are groups of css declarations that can be reused in multiple places of the stylesheet. Mixins are like functions
+    for css:
+        @mixin box-shadow($x, $y, $blur, $c){               \\ @mixin keyword followed by a custom name
+            -webkit-box-shadow: $x $y $blur $c;
+            -moz-box-shadow: $x $y $blur $c;
+            -ms-box-shadow: $x $y $blur $c;
+            box-shadow: $x $y $blur $c;
+        }
+- A mixin is called with the @include keayword:
+    @include box-shadow(0px, 0px, 4px, #fff);
+- @If statements in sass work just like in js:
+    @mixin border-stroke($val){
+        @if $val == light {
+            border: 1px solid black;  
+        } @else if $val == medium {
+            border: 3px solid black;
+        } @else if $val == heavy {
+            border: 6px solid black;
+        } @else {
+            border: none;
+        }
+    }
+- The @for directive adds styles in a loop. There are two types of for loops, start through end where the end num is included, 
+    and start to end where end is not included as part of the count:
+        @for $i from 1 through 12 {
+             .col-#{$i} { width: 100%/12 * $i; }        \\ the #[$i] syntax is used to create a string combining the variable $i
+        }                                               \\ and the string col-     -> example col-2
+- The @each directive is used to map over items in a list.
