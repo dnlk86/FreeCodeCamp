@@ -39,4 +39,33 @@
         @for $i from 1 through 12 {
              .col-#{$i} { width: 100%/12 * $i; }        \\ the #[$i] syntax is used to create a string combining the variable $i
         }                                               \\ and the string col-     -> example col-2
-- The @each directive is used to map over items in a list.
+- The @each directive is used to loop over items in a list or map:
+    @each $color in red, green, blue {                  \\ looping through a list
+        .#{$color}-text {color: $color;}
+    }
+
+    $colors: (color1: blue, color2: red, color3: green);
+    @each $key, $color in $colors {                     \\ looping through a map (obj)
+        .#{$color}-text {color: $color;}
+    }
+- The @while directive like in js is used to apply a style until a certain condition is met:
+    $x: 1;
+    @while $x < 6 {
+        .text-#{$x} { font-size: $x*15px;}
+        $x: $x + 1;
+    }
+- Partials are separate files holding segments of css code that are then imported and used in other sass files. Names for Partials
+    start with an underscore (_) and end up with .scss file extension. To bring code in another file the @import directive is used.
+    In the import statement the underscore is not needed:
+        _variables.scss             \\ that's the partial file
+        @import "variables"
+- The @extend directive, as the name suggests, allows to borrow the styling rules from one element and build upon the in another:
+    .panel {
+        background-color: red;
+        width: 100%;
+    }
+
+    .tall-panel {
+        @extend .panel;
+        height: 100vh;          \\ tall-panel has the same properties of panel and also has a specific height
+    }
