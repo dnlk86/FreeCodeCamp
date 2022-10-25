@@ -1,0 +1,52 @@
+- React is an open source view library created by facebook used to build user interfaces (UI) of web applications.
+- React's syntax, called JSX, allows to write HTML directly within JS code. This allows to use all the programmatic features of JS in HTML.
+- A .jsx file is an extension of regular JS, it's possible to use all the core JS features, including ES6. To write JS code in the file
+    it has to be included within curly braces { js code goes here... }.
+- JSX is not valid JS, so it has to be compiled into JavaScript. The Babel transpiler is a popular tool to do this.
+- Nested JSX must return one single thing: 
+    const JSX = <div>
+                    <p>Paragraph One</p>            \\ 3 paragraphs without a parent div wrapping them would not transpile
+                    <p>Paragraph Two</p>
+                    <p>Paragraph Three</p>
+                </div>
+- Comments in JSX are done with: {/* this is a comment */}
+- JSX can be rendered directly in the HTML DOM by using the react rendering API called ReactDOM. This API provides a method called
+    .render() that accepts two arguments, the first is the component to render, and the second is the DOM node where the JSX component
+    has to be rendered:
+        ReactDOM.render(JSX, document.getElementById('root'))    \\ this places the JSX in the react lightweight representation of the DOM
+- A key diffence in JSX compared to HTML is that it's no longer possible to use the keyword class inside elements and it has to be used
+    the keyword className instead. In general the naming convention for all HTML attributes becomes lower camelCase in JSX.
+- Another difference is the idea of self-closing tags. Most HTML elements have an opening and a closing tag. In JSX any element can be
+    written with a self-closing tag and element must be closed, so while it is possible to write <br> in HTML, in JSX it has to be <br />.
+- Everything in React is a component. The first way to create a component is to use a JS function. Such a component is called stateless
+    functional component, where stateless indicates that the function receives data to render but does not track or manage the changes to
+    the data. The function has simply to return JSX or null and the name has to be in UpperCamelCase:
+    const MyComponent = function() {
+        return (
+            <div className="comp_1">
+                some text...
+            </div>
+        );
+    }; 
+- The second way to create a react component is with the ES6 class syntax:
+    class MyComponent extends React.Component {     \\ MyComponent inherits the features of React.Component
+        constructor(props) {                        
+            super(props);                           \\ The constructor uses the super() method to call the constructor of the parent
+        }                                           \\ class, in this case React.Component. The constructor is used during initialization
+                                                    \\ of an instance of MyComponent.
+        render() {
+            return (
+                <h1>My component</h1>
+            );
+        }
+    }
+- Multiple components can be composed together, this can be done by including the component name written as a custom HTML tag in the JSX:
+    return (
+        <App>
+            <Navbar />              \\ combined 3 child components to the "App" parent component
+            <Dashboard />
+            <Footer />
+        </App>
+    )
+- When working with React it is important to start thinking about user interface in terms of components composition. This way the UI
+    can be broken down in basic building blocks, and the code responsible for the UI can be separated from the application logic.
