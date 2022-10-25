@@ -50,3 +50,25 @@
     )
 - When working with React it is important to start thinking about user interface in terms of components composition. This way the UI
     can be broken down in basic building blocks, and the code responsible for the UI can be separated from the application logic.
+- In react rendering JSX elements with stateless functional components or with ES6 style class components makes no difference in terms
+    of the outcome.
+- React components are passed to the render() method a little different than JSX elements. For JSX the name of the element is passed.
+    For react components the syntax is like the one used to nest components within each other:
+        ReactDOM.render(<App />, document.getElementById("someID"));
+- In react it is possible to pass props, or properties, from parent components to their childs. To this end react allows to create
+    custom HTML attributes in order to pass down the properties and their values:
+        <App>
+            <Welcome user="Mark" />
+        </App>
+    In this case the stateless functional component Welcome looks like this:
+        const Welcome = (props) => <h1>Hello, {props.user}</h1>     \\ standard practice is to call these values props
+                                                                    \\ props is basically an argument to a function that returns JSX 
+- Also arrays can be passed down to child components as props. Since arrays are JS data structures, the props need to be passed inside
+    curly braces, and it is possible to use arrays methods on the prop as well.
+- DefaultProps allow to set a default value in case no value is provided to the component:
+    const Items = (props) => {
+        return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+    }
+
+    Items.defaultProps = { quantity: 0 };
+- Explicitly setting a prop value will override a default prop.
