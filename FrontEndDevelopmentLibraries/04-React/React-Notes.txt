@@ -72,3 +72,11 @@
 
     Items.defaultProps = { quantity: 0 };
 - Explicitly setting a prop value will override a default prop.
+- The propType property is a usefull feature that sets the expected prop type of a component. It is defined the same way as 
+    defaultProps are defined:
+        MyComponent.propTypes = { handleClick: PropTypes.func.isRequired }  \\ here it's checked if a function is passed with
+                                                                            \\ "propType.func". isRequired tells react that handleClick
+                                                                            \\ is a required property.
+- In order to pass props down to ES6 class styled component the syntax is slighlty different compared to stateless functional components.
+    Anytime refering to a class component within itself the "this" keyword is needed:
+        {this.props.propName}
