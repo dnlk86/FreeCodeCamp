@@ -80,3 +80,17 @@
 - In order to pass props down to ES6 class styled component the syntax is slighlty different compared to stateless functional components.
     Anytime refering to a class component within itself the "this" keyword is needed:
         {this.props.propName}
+- A stateless functional component is any function you write which accepts props and returns JSX.
+- A stateless component, on the other hand, is a ES6 class that extends React.Component, but does not use internal state.
+- A stateful component is a class component that does maintain its own internal state. State is any data that the application needs
+    to know about and can change over time. The application needs to respond to those changes and adapt the UI is needed
+- A statefull component is created by creating a state property in the class constructor. When the component is initialized so is the
+    state. The state property must be a js object:
+        constructor(props) {
+            super(props);
+            this.state = {}
+        }
+- React uses what is called virtual DOM to keep track of state changes, when state in a component changes, the component itself is 
+    re-rendered and also the child components that receive that data as prop.
+- State is completely encapsulated (it local to the component) and no other component except those child where it is passed as a prop 
+    can have access to it.
