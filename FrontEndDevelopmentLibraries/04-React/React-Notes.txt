@@ -94,3 +94,32 @@
     re-rendered and also the child components that receive that data as prop.
 - State is completely encapsulated (it local to the component) and no other component except those child where it is passed as a prop 
     can have access to it.
+- React provides a method to change the state called setState(). This method can be called within the component with the syntax:
+    this.setState()     \\ an object has to be passed in
+- React expects the state to be modified only via the setState method, and never directly accessing it.
+    class MyComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                name: 'Initial State'
+                };
+            this.handleClick = this.handleClick.bind(this);                 \\ by binding this to the handleClick method in the
+        }                                                                   \\ constructor, the handleClick method later declared
+        handleClick() {                                                     \\ can have acces to properties on the class such as
+            this.setState( {name: "React Rocks!"} );                        \\ props and state
+        }
+        render() {
+            return (
+            <div>
+                <button onClick={this.handleClick}>Click Me</button>        \\ the onClick handler runs the handleClick method
+                <h1>{this.state.name}</h1>                                  \\ that is responsible for invoking setState and changing
+            </div>                                                          \\ the state to a new value
+            );
+        }
+    };
+- In order to change the state with setState() the best practice is to pass setState a callback function that accept state and props as
+    argument and that handles the change. This is done since state updates may be asynchronous, so multiple updates can occur at the 
+    same time. Using setState with a function guarantees to be working with the latest values of state and props:
+        this.setState((state, props) => ({
+            counter: state.counter + props.increment
+        }));
