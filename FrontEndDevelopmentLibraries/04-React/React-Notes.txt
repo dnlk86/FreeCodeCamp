@@ -123,3 +123,7 @@
         this.setState((state, props) => ({
             counter: state.counter + props.increment
         }));
+- React can control the internal state of certain elements such as inputs, forms, this makes them controlled components. This is done
+    by having handler functions that setState when certain events occur.
+- The event.preventDefault() method prevent the default submit behavior of forms, that refreshes the page once the form is submitted.
+    It has to be included in the submit handler.
