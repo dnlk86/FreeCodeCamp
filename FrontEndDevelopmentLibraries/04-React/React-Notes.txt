@@ -127,3 +127,11 @@
     by having handler functions that setState when certain events occur.
 - The event.preventDefault() method prevent the default submit behavior of forms, that refreshes the page once the form is submitted.
     It has to be included in the submit handler.
+- State flows in one direction (unidirectional data flow) down the tree of an application, from a stateful parent component to a child 
+    component. This separation of state logic from UI logic is one of React's key principles.
+- It is also possible to pass handler functions or any method that is defined in the parent component as props down to the child component.
+    The access to those props is done with the usual syntax {this.props.somePropName}.
+- Lifecycle methods or hooks are special methods that perform certain actions at specific points in the lifecycle of a react component.
+    This can be before the component is rendered, before it updates, before it receives a prop or before it unmounts and so on.
+    Here the main lifecycle hooks:
+        componentWillMount() componentDidMount() shouldComponentUpdate() componentDidUpdate() componentWillUnmount()
