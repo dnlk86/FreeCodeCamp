@@ -135,3 +135,14 @@
     This can be before the component is rendered, before it updates, before it receives a prop or before it unmounts and so on.
     Here the main lifecycle hooks:
         componentWillMount() componentDidMount() shouldComponentUpdate() componentDidUpdate() componentWillUnmount()
+- The best practice in react is to place API calls or any server call in the componentDidMount() hook. This method is called after
+    the component is mounted to the DOM. Any call of setState from within the componentDidMount will trigger re-rendering of the component
+    itself.
+- The componentDidMount method is also the best place to attach any event listener:
+    componentDidMount() {
+        document.addEventListener("keydown", this.handleKeyPress);  \\ the event needs to be passed in quotes and the second parameter
+    }                                                               \\ is the handler function
+- The lifecycle method shouldComponentUpdate() is called when a component receives new props or state in order to decide wether the
+    component should update or not (the default behavior is that when a comp. receives a prop re-renders even if props haven't changed).
+    shouldComponentUpdate() takes two params, nextProps and nextState, and performs a comparison with the current this.state, this.props
+    in order to determine if a re-render is needed.
