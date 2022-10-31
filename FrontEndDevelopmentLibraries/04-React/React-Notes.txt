@@ -146,3 +146,21 @@
     component should update or not (the default behavior is that when a comp. receives a prop re-renders even if props haven't changed).
     shouldComponentUpdate() takes two params, nextProps and nextState, and performs a comparison with the current this.state, this.props
     in order to determine if a re-render is needed.
+- One way to add styling to react components is with the className attribute, just like with classes in regular HTML.
+    Another common way is to style JSX components with inline-styling. Like in HTML the "style" prop is used but instead of passing
+    the style values as a string inside quotes, it is passed as a JS object inside curly braces, and the css props are written in camelCase:
+       <div style={{color: "yellow", fontSize: "16px"}}>Mellow Yellow</div> 
+- To note when setting css properties in JSX that hyphens are not valid in JS names, so all the css prop names have to be in lower
+    camelCase. Another thing is that all length units need to be passed as strings, otherwise just the value without quotes:
+        const styles = {
+            color: "purple",
+            fontSize: 40,
+            border: "2px solid purple",
+        };
+        class Colorful extends React.Component {
+            render() {
+                return (
+                <div style={styles}>Style Me!</div>
+                );
+            }
+        };
