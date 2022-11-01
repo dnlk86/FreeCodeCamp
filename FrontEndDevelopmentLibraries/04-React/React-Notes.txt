@@ -166,3 +166,11 @@
         };
 - Another way to write JS code in react without using curly braces is to write it before the return statement in the render method,
     before the actual JSX code (React-MagicBall.jsx)
+- The render of a component can be tied to a condition, if something then render this view else render that other view. This is done
+    with a regular if/else statement in the render function before the return statement.
+- A more concise way to achieve the same goal is the use of the && logical operator:
+    {condition && <p>markup</p>}    \\ if the condition evaluates true the <p> will be returned
+    This syntax can be included directly in JSX and allows to check for multiple conditions in the return statement without having
+    to repeat code.
+- Another way to render components conditionally is with the use of the ternary operator. This can be also done directly inside the JSX:
+    {condition ? expressionIfTrue : expressionIfFalse}
