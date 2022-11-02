@@ -174,3 +174,6 @@
     to repeat code.
 - Another way to render components conditionally is with the use of the ternary operator. This can be also done directly inside the JSX:
     {condition ? expressionIfTrue : expressionIfFalse}
+- Common practice is to render components conditionally from props, this means using the value of a prop to decide what to render.
+- Following the same principle it is possible to change conditionally the styling of a component be modifying the style object in 
+    the render method of the component itself, based on the props received.
