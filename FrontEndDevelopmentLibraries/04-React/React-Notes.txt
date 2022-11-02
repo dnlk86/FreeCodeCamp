@@ -177,3 +177,12 @@
 - Common practice is to render components conditionally from props, this means using the value of a prop to decide what to render.
 - Following the same principle it is possible to change conditionally the styling of a component be modifying the style object in 
     the render method of the component itself, based on the props received.
+- The Array.map() method can be used to render elements dinamically inside JSX components. This way as a state array prop changes 
+    also what is rendered changes. Important to remeber to add in <li> a unique key prop while mapping an array of <li>.
+- Another useful method is filter, which filters an array based on a condition.
+- ReactDOMServer.renderToString(<SomeApp />) is a method that allows to render a react component to the server. This is possible 
+    Thanks to Node.js and it is useful for two reasons:
+        1. Without rendering some HTML to the server the app would be just an empty HTML file and some JS code that needs to be 
+            loaded to the browser. That's not good for SEO, since the search engines would not be able to crawl in the content of 
+            the app.
+        2. It creates a faster initial page load, since HTML is smaller than the JS code of the entire app.
