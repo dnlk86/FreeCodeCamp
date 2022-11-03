@@ -44,3 +44,4 @@
             auth: authenticationReducer,
             notes: notesReducer
         });
+- It is possible to send also data along with the actions to the store (Redux-DataToStore.js).
