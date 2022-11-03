@@ -1,0 +1,33 @@
+- Redux is a state management framework that has a single object that is responsible for the entire state of an application. This object
+    is housed in the redux "store". Each component building a react app can still have its own local state, but when any piece of the 
+    app wants to update its state, has to go through the redux store.
+- Store is created through a method called createStore() that takes a reducer functions as a argument that simply takes state as an 
+    argument and returns state:
+        const reducer = (state = 5) => {    \\ passing a default argument
+            return state;
+        }
+        const store = Redux.createStore(reducer);
+- The store.getState() method retrieves state from store:
+    const currentState = store.getState();
+- Redux actions are used to update state. These are JS objects that contain information about an action event that has occurred.
+    Redux store receives these actions and updates state accordingly. All actions must carry a type property that specifies the type
+    of occurred action. Actions can also carry data, but that's optional:
+        const action = {        \\ creating an action of type "LOGIN"
+            type: 'LOGIN'
+        }
+- An action creator is a function that returns an action. These are the way store receives an action an updates state:
+    const actionCreator = () => action;
+- store.dispatch() is the method used to dispatch actions to the Redux store. The method is called on store and takes as an argument
+    the value returned from an actionCreator and sends it back to the store:
+        store.dispatch(actionCreator());        \\ these two lines of code are equivalent
+        store.dispatch({ type: 'LOGIN' });
+- The reducer function is the one responsible for state modifications in response of an action. A reducer takes state and action as 
+    arguments and returns a new state (never do API calls inside reducers or other tasks). A reducer is a pure function that reads
+    the state passed as argument and always returns a new copy of state, never modifying state directly (state immutability):
+        const reducer = (state = defaultState, action) => {
+            if (action.type === "LOGIN") {
+                return {login: true}
+            } else {
+                return state;
+            }
+        };
