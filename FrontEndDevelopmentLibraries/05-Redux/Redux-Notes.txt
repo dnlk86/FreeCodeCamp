@@ -31,3 +31,16 @@
                 return state;
             }
         };
+- Reduce store can handle multiple action types with JS switch statements.
+- Common practice is to assign action to read-only constants and then reference to those constants (Redux-Actions.js).
+- The store.subscribe() method allows to subscribe listener functions to store which are called whenever an actions is dispatched 
+    against the store (Redux-Subscribe.js).
+- When an application grows in complexity state has always to remain a single object, but it is possible to have multiple reducer
+    functions that handle different pieces of the app's state and combine them into a single root reducer that is then passed to 
+    the createStore() method.
+- To combine multiple reducers in a root reducer Redux provides the combineReducers() method that takes an object of reducer names (key)
+    and reducers function (values) as an argument:
+        const rootReducer = Redux.combineReducers({
+            auth: authenticationReducer,
+            notes: notesReducer
+        });
