@@ -45,3 +45,6 @@
             notes: notesReducer
         });
 - It is possible to send also data along with the actions to the store (Redux-DataToStore.js).
+- The Redux Thunk middleware is specifically designed to handle asynchronous actions. To include thunk the syntax is:
+    Redux.applyMiddleware()     \\ this statement must be provided as second parameter to the createStore() function.
+
