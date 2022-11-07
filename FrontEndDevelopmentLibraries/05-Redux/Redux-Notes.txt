@@ -47,4 +47,10 @@
 - It is possible to send also data along with the actions to the store (Redux-DataToStore.js).
 - The Redux Thunk middleware is specifically designed to handle asynchronous actions. To include thunk the syntax is:
     Redux.applyMiddleware()     \\ this statement must be provided as second parameter to the createStore() function.
+- A key principle in Redux is state immutability, this means to never modify directly state and instead return in the reducer a new copy 
+    of state. This is particularly important with arrays and objects that are mutable data structures. In such cases is prefered to used
+    methods that do not modify the original state, like spread operator for arrays ([...myArr]) that returns a copy of the elements of
+    the original array, or Object.assign:
+        const newObject = Object.assign({}, obj1, obj2);    \\ This creates newObject as a new object, which contains the properties 
+                                                            \\ that currently exist in obj1 and obj2.
 
