@@ -4,3 +4,13 @@
         <Provider store={store}>    \\ ReactAndRedux.js
             <App/>
         </Provider>
+- mapStateToProps() and mapDispatchToProps() as the names suggest are the functions responsible for mapping state and dispatch provided
+    by redux with props in react.
+- Behind the scenes, React Redux uses the store.subscribe() method to implement mapStateToProps(). It accept state as argument.
+- Behind the scenes, React Redux is using Redux's store.dispatch() to implement mapDispatchToProps(). It accepts dispatch as argument.
+- mapDispatchToProps() is used to provide specific action creators to react components so that those components can dispatch actions
+    agaist the redux store.
+- The connect method from react redux, that takes as optional arguments mapStateToProps() and mapDispatchToProps(), maps state and 
+    dispatch to props of a react component:
+        const connect = ReactRedux.connect;
+        const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(MyComponent);

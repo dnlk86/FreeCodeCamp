@@ -4,7 +4,7 @@ const ADD = "ADD";
 const addMessage = (message) => {
     return {
         type: ADD,
-        message,
+        message: message,
     };
 };
 
@@ -20,12 +20,14 @@ const messageReducer = (state = [], action) => {
 const store = Redux.createStore(messageReducer);
 
 // React:
-class DisplayMessages extends React.Component {
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+
+class Presentational extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             input: "",
-            messages: [],
         };
         this.handleChange = this.handleChange.bind(this);
         this.submitMessage = this.submitMessage.bind(this);
@@ -35,14 +37,11 @@ class DisplayMessages extends React.Component {
             input: event.target.value,
         });
     }
-    submitMessage() {
-        this.setState((state) => {
-            const currentMessage = state.input;
-            return {
-                input: "",
-                messages: state.messages.concat(currentMessage),
-            };
-        });
+    submitMessage(props) {
+        this.props.submitNewMessage(this.state.input);
+        this.setState((state) => ({
+            input: "",
+        }));
     }
     render() {
         return (
@@ -52,7 +51,7 @@ class DisplayMessages extends React.Component {
                 <br />
                 <button onClick={this.submitMessage}>Submit</button>
                 <ul>
-                    {this.state.messages.map((message, idx) => {
+                    {this.props.messages.map((message, idx) => {
                         return <li key={idx}>{message}</li>;
                     })}
                 </ul>
@@ -60,15 +59,27 @@ class DisplayMessages extends React.Component {
         );
     }
 }
+// Change code above this line
 
-// React and Redux
-const Provider = ReactRedux.Provider;
+const mapStateToProps = (state) => {
+    return { messages: state };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        submitNewMessage: (message) => {
+            dispatch(addMessage(message));
+        },
+    };
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
 
 class AppWrapper extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <DisplayMessages />
+                <Container />
             </Provider>
         );
     }
