@@ -1,0 +1,6 @@
+- React-Redux is a package that allows the two to interact with each other.
+- Provider is one of the key features of react-redux that wraps the react app, and grants access to the redux store and dispatch 
+    functions throughout the component tree. Provider takes two props, the Redux store and the React child component of the app:
+        <Provider store={store}>    \\ ReactAndRedux.js
+            <App/>
+        </Provider>
